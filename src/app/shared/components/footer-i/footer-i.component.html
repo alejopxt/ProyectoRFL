@@ -1,0 +1,36 @@
+<footer class="footer">
+  <div class="container text-center">
+    <!-- Título del footer con un icono representativo -->
+    <h5 class="fw-bold">
+      <i class="fas fa-handshake footer-icon me-2"></i>Tu Aliado en el Éxito Financiero
+    </h5>
+
+    <!-- Sección donde se mostrarán los mensajes dinámicos -->
+    <div class="row justify-content-center">
+      @for (message of messages; track message.text) {
+        <!-- Cada mensaje se muestra dentro de una tarjeta (card) -->
+        <div class="col-md-3 col-sm-6">
+          <div class="card custom-card shadow-sm">
+            <div class="card-body">
+              <!-- Icono dinámico del mensaje -->
+              <i class="{{ message.icon }} fa-2x mb-2 custom-icon"></i>
+              <!-- Texto del mensaje -->
+              <p class="card-text">{{ message.text }}</p>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <!-- Mensaje alternativo si no hay mensajes disponibles -->
+        <p class="text-muted">No hay mensajes disponibles.</p>
+      }
+    </div>
+
+    <!-- Línea divisoria entre secciones del footer -->
+    <div class="divider"></div>
+
+    <!-- Sección de derechos de autor con el año dinámico -->
+    <p class="small">
+      <i class="fas fa-copyright me-1"></i> {{ currentYear }} Rendimiento Financiero Laboral | Todos los derechos reservados
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,172 @@
+// 🎨 Fondo general con degradado dinámico
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #B8E6C1, #F7D7C4);
+  padding: 1.5rem;
+  animation: fadeInBackground 1s ease-in-out;
+}
+
+// 🎨 Efecto Glassmorphism en el formulario
+.register-form {
+  background: rgba(255, 255, 255, 0.4);
+  // backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: slideIn 0.7s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5A189A;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.8rem;
+    animation: fadeInText 1s ease-in-out;
+  }
+
+  // 🎨 Estilos para los labels e iconos
+  .form-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    i {
+      font-size: 1.3rem;
+      color: #00C4FF;
+    }
+  }
+
+  // 🎨 Contenedor de los inputs con efectos dinámicos
+  .input-group {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .input-group-text {
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      color: #444;
+      font-size: 1.2rem;
+    }
+
+    .form-control {
+      background: transparent;
+      border: none;
+      color: #333;
+      font-size: 1rem;
+      padding: 0.9rem;
+      outline: none;
+      transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:focus {
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  // 🎨 Estilos de los botones con animaciones
+  .btn-primary {
+    background: linear-gradient(90deg, #FFD700, #00C4FF);
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.9rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .btn-outline-secondary {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.9rem;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #333;
+    background: transparent;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, background 0.3s ease-in-out;
+
+    &:hover {
+      color: #5A189A;
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  // 🎨 Animaciones para mejorar la experiencia
+  @keyframes fadeInBackground {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// 🎨 Responsividad para mejorar la usabilidad en móviles
+@media (max-width: 768px) {
+  .register-form {
+    padding: 1.8rem;
+    max-width: 90%;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+  }
+
+  .btn-outline-secondary {
+    font-size: 1rem;
+  }
+}

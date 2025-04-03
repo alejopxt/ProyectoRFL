@@ -1,0 +1,106 @@
+/* Fondo general con degradado dinámico */
+body {
+  background: linear-gradient(to right, #FCECD5, #F7D7C4, #B8E6C1);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Tarjeta contenedora */
+.card {
+  background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  border-radius: 15px;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Título centrado con degradado */
+h2 {
+  background: linear-gradient(to right, #B8E6C1, #F7B4B4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Imagen de perfil con animaciones */
+.perfil-imagen {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Botón de guardar cambios */
+.btn-success {
+  background: linear-gradient(135deg, #B8E6C1, #5DCAA1);
+  border: none;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #5DCAA1, #3B9E80);
+    transform: scale(1.05);
+  }
+}
+
+/* Inputs con bordes redondeados y efectos */
+.form-control {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+
+  &:focus {
+    border-color: #B8E6C1;
+    box-shadow: 0 0 10px rgba(184, 230, 193, 0.5);
+  }
+}
+
+/* Íconos dentro de etiquetas */
+label i {
+  color: #5DCAA1;
+  margin-right: 5px;
+}
+
+/* Transición de los enlaces */
+a {
+  text-decoration: none;
+  color: #5DCAA1;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #3B9E80;
+  }
+}
+
+/* Notificación flotante cuando se guarda */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  animation: fadeInUp 0.5s ease-in-out;
+}

@@ -1,0 +1,178 @@
+// 🎨 Estilos generales del contenedor
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #B8E6C1, #F7D7C4, #F7B4B4);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+}
+
+// 🎨 Estilos del formulario
+.login-form {
+  background: rgba(255, 255, 255, 0.3);
+  // backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #5A189A;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+  }
+
+  // 🎨 Etiquetas y estilos de los campos de entrada
+  .form-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+
+    i {
+      font-size: 1.2rem;
+      color: #00C4FF;
+    }
+  }
+
+  // 🎨 Estilos de los input y su contenedor
+  .input-group {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .input-group-text {
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      color: #444;
+      font-size: 1.1rem;
+    }
+
+    .form-control {
+      background: transparent;
+      border: none;
+      color: #333;
+      font-size: 1rem;
+      padding: 0.8rem;
+      outline: none;
+      transition: background 0.3s ease-in-out;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:focus {
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  // 🎨 Mensajes de error y validación
+  .error-text,
+  .valid-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .error-text {
+    color: #D90429;
+  }
+
+  .valid-text {
+    color: #2AA60F;
+  }
+
+  // 🎨 Botón de inicio de sesión
+  .btn-primary {
+    background: linear-gradient(90deg, #FFD700, #00C4FF);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  // 🎨 Enlaces de recuperación y registro
+  .d-flex a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #5A189A;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// 🎨 Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 🎨 Media Queries para responsividad
+@media (max-width: 768px) {
+  .login-form {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      margin-top: 0.5rem;
+    }
+  }
+}

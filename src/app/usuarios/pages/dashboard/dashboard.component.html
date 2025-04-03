@@ -1,0 +1,39 @@
+<!-- Componente de la barra de navegación -->
+<app-navbar-d></app-navbar-d>
+
+<!-- Contenedor principal con margen superior -->
+<div class="container mt-4">
+  <!-- Título centrado del dashboard -->
+  <div class="text-center mb-4">
+    <h2 class="dashboard-title">
+      <!-- Ícono de gráfico de rendimiento financiero -->
+      <i class="fas fa-chart-line me-2"></i> Rendimiento Financiero Laboral
+    </h2>
+  </div>
+
+  <!-- Sección para mostrar las tarjetas de información financiera -->
+  <div class="row">
+    <!-- Bucle que recorre las secciones financieras -->
+    @for (section of financialSections; track section.title) {
+      <div class="col-md-6 col-lg-3">
+        <!-- Tarjeta que muestra información sobre una sección financiera -->
+        <div class="card shadow-sm financial-card">
+          <div class="card-body text-center">
+            <!-- Ícono de la sección -->
+            <i class="{{ section.icon }} fa-3x icon-style"></i>
+            <!-- Título de la sección -->
+            <h5 class="card-title mt-3">{{ section.title }}</h5>
+            <!-- Descripción de la sección -->
+            <p class="card-text">{{ section.description }}</p>
+          </div>
+        </div>
+      </div>
+    } 
+    <!-- Si no hay secciones financieras, se muestra este mensaje -->
+    @empty {
+      <div class="col-12 text-center">
+        <p>No hay secciones financieras disponibles.</p>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<!-- Barra de navegación con diseño responsivo -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid">
+    <!-- Logo o icono de la aplicación -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="fas fa-tachometer-alt fa-lg me-2"></i> 
+    </a>
+
+    <!-- Botón para menú colapsable en dispositivos pequeños -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenedor del menú -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Menú de navegación principal alineado a la izquierda -->
+      <ul class="navbar-nav me-auto">
+        <!-- Opción desplegable "Menú" con diferentes secciones -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">
+            <i class="fas fa-bars me-2"></i> Menú
+          </a>
+          <ul class="dropdown-menu">
+            <!-- Opciones dentro del menú desplegable -->
+            <li><a class="dropdown-item" [routerLink]="['/financiero-laboral/principal']"><i class="fas fa-briefcase me-2"></i> Financiero Laboral</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/financiero-personal/inicio']"><i class="fas fa-wallet me-2"></i> Financiero Personal</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/ahorros/inicio']"><i class="fas fa-piggy-bank me-2"></i> Ahorros</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-bar me-2"></i> Reportes</a></li>
+          </ul>
+        </li>
+
+        <!-- Opción para acceder a documentación o ayuda -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-book me-2"></i> 
+          </a>
+        </li>
+
+        <!-- Opción para editar el perfil del usuario -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/usuarios/perfil']">
+            <i class="fas fa-user-edit me-2"></i> Editar Perfil
+          </a>
+        </li>
+      </ul>
+
+      <!-- Elementos alineados a la derecha -->
+      <ul class="navbar-nav ms-auto">
+        <!-- Icono de notificaciones -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-bell fa-lg"></i>
+          </a>
+        </li>
+
+        <!-- Menú desplegable para configuraciones -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown">
+            <i class="fas fa-cog fa-lg"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <!-- Opción para cerrar sesión -->
+            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

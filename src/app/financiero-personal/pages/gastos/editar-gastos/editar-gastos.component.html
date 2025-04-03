@@ -1,0 +1,196 @@
+<app-navbar-d></app-navbar-d>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100 border-end text-center" style="width: 250px;">
+                <a [routerLink]="['/financiero-personal/gastos']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill me-2" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                    <h5 class="fw-bold ms-2">Regresar</h5>
+                </a>
+                <hr>
+                <h4 class="text-center">Gastos</h4>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a [routerLink]="['/financiero-personal/gastos/agregar']" class="nav-link text-dark fw-semibold">Agregar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/financiero-personal/gastos/editar']" class="nav-link text-dark fw-semibold">Editar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/financiero-personal/gastos/borrar']" class="nav-link text-dark fw-semibold">Borrar</a>
+                    </li>
+                    <hr><br>
+                    <a [routerLink]="['/financiero-personal/ingresos']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Ingresos</h4>
+                    </a><br>
+                    <hr><br>
+                    <a [routerLink]="['']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Ahorros Personales</h4>
+                    </a><br>
+                    <hr><br>
+                    <a [routerLink]="['']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Reportes Personales</h4>
+                    </a><br>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-10">
+            <div class="container">
+                <div class="row align-items-center mt-3">
+                    <div class="col">
+                        <h1 class="text-center">Editar Gastos</h1>
+                    </div>
+                </div>
+
+                <div class="table-responsive mt-3">
+                    <table class="table table-light table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Método de pago</th>
+                                <th scope="col">Periodicidad</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td>Arriendo apartamento</td>
+                                <td>Vivienda</td>
+                                <td>$1.200.000 COP</td>
+                                <td>Pago mensual del arriendo del apartamento.</td>
+                                <td>Transferencia bancaria</td>
+                                <td>Mensual</td>
+                                <td>31/01/2025</td>
+                                <td data-bs-toggle="modal" data-bs-target="#modalEditarGasto">
+                                    <button type="button" class="btn btn-warning rounded-pill px-3">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Compra de mercado</td>
+                                <td>Alimentación</td>
+                                <td>$450,000 COP</td>
+                                <td>Compra de alimentos y productos básicos para el hogar.</td>
+                                <td>Tarjeta de crédito</td>
+                                <td>Quincenal</td>
+                                <td>15/01/2025</td>
+                                <td data-bs-toggle="modal" data-bs-target="#modalEditarGasto">
+                                    <button type="button" class="btn btn-warning rounded-pill px-3">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pasajes del bus</td>
+                                <td>Transporte</td>
+                                <td>$5,000 COP</td>
+                                <td>Gasto en pasajes de bus para ir y volver del trabajo.</td>
+                                <td>Efectivo - Tarjeta recargable</td>
+                                <td>Diario</td>
+                                <td>25/03/2025</td>
+                                <td data-bs-toggle="modal" data-bs-target="#modalEditarGasto">
+                                    <button type="button" class="btn btn-warning rounded-pill px-3">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pago de internet hogar</td>
+                                <td>Servicios públicos</td>
+                                <td>$120,000 COP</td>
+                                <td>Pago del plan de internet de 300 Mbps.</td>
+                                <td>Débito automático</td>
+                                <td>Mensual</td>
+                                <td>9/12/2024</td>
+                                <td data-bs-toggle="modal" data-bs-target="#modalEditarGasto">
+                                    <button type="button" class="btn btn-warning rounded-pill px-3">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cena con amigos</td>
+                                <td>Entretenimiento</td>
+                                <td>$80,000 COP</td>
+                                <td>Cena en un restaurante con amigos.</td>
+                                <td>Efectivo</td>
+                                <td>Ocasional</td>
+                                <td>15/01/2025</td>
+                                <td data-bs-toggle="modal" data-bs-target="#modalEditarGasto">
+                                    <button type="button" class="btn btn-warning rounded-pill px-3">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Editar Gasto -->
+
+<div class="modal fade" id="modalEditarGasto" tabindex="-1" aria-labelledby="modalEditarGastoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAgregarGastoLabel">Editar Gasto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombreIngreso" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombreIngreso">
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoriaIngreso" class="form-label">Categoría</label>
+                        <select class="form-select" id="categoriaIngreso">
+                            <option>Vivienda</option>
+                            <option>Alimentación</option>
+                            <option>Transporte</option>
+                            <option>Servicios públicos</option>
+                            <option>Entretenimiento</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="montoIngreso" class="form-label">Monto</label>
+                        <input type="number" class="form-control" id="montoIngreso">
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcionIngreso" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionIngreso" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="metodoPago" class="form-label">Método de Pago</label>
+                        <input type="text" class="form-control" id="metodoPago">
+                    </div>
+                    <div class="mb-3">
+                        <label for="periodicidadIngreso" class="form-label">Periodicidad</label>
+                        <select class="form-select" id="periodicidadIngreso">
+                            <option>Únicamente</option>
+                            <option>Ocasional</option>
+                            <option>Diario</option>
+                            <option>Semanal</option>
+                            <option>Quincenal</option>
+                            <option>Mensual</option>
+                            <option>Trimestral</option>
+                            <option>Semestral</option>
+                            <option>Anual</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaIngreso" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fechaIngreso">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Editar Gasto</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>editar-gastos works!</p>

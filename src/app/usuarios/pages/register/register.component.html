@@ -1,0 +1,93 @@
+<!-- Contenedor principal del formulario de registro -->
+<div class="register-container">
+  <!-- Formulario de registro con Angular Reactive Forms -->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    
+    <!-- Título del formulario -->
+    <h2 class="text-center">Registro</h2>
+
+    <div class="row">
+      <!-- Primera columna del formulario -->
+      <div class="col-md-6">
+        
+        <!-- Campo de entrada para el nombre -->
+        <label for="nombre" class="form-label">
+          <i class="fas fa-user"></i> Nombres
+        </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="fas fa-user"></i>
+          </span>
+          <input type="text" id="nombre" formControlName="nombre" class="form-control" placeholder="Ingrese su nombre">
+        </div>
+
+        <!-- Campo de selección para el tipo de documento -->
+        <label for="tipoDocumento" class="form-label">
+          <i class="fas fa-id-card"></i> Tipo de Documento
+        </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="fas fa-id-card"></i>
+          </span>
+          <select id="tipoDocumento" formControlName="tipoDocumento" class="form-control">
+            <option value="" disabled selected>Seleccione</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="CE">Cédula de Extranjería</option>
+          </select>
+        </div>
+
+        <!-- Campo de entrada para la contraseña -->
+        <label for="password" class="form-label">
+          <i class="fas fa-lock"></i> Contraseña
+        </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="fas fa-lock"></i>
+          </span>
+          <input type="password" id="password" formControlName="password" class="form-control" placeholder="Ingrese su contraseña">
+        </div>
+      </div>
+
+      <!-- Segunda columna del formulario -->
+      <div class="col-md-6">
+
+        <!-- Campo de entrada para el correo electrónico -->
+        <label for="correo" class="form-label">
+          <i class="fas fa-envelope"></i> Correo
+        </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <input type="email" id="correo" formControlName="correo" class="form-control" placeholder="Ingrese su correo">
+        </div>
+
+        <!-- Campo de entrada para el número de documento -->
+        <label for="numeroDocumento" class="form-label">
+          <i class="fas fa-id-badge"></i> N° Documento
+        </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="fas fa-id-badge"></i>
+          </span>
+          <input type="text" id="numeroDocumento" formControlName="numeroDocumento" class="form-control" placeholder="Ingrese su documento">
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de botones -->
+    <div class="row mt-3">
+      <!-- Botón para registrar usuario -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+
+      <!-- Botón de enlace para iniciar sesión -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <a [routerLink]="['/usuarios/login']" class="btn btn-outline-secondary">Iniciar Sesión</a>
+      </div>
+    </div>
+
+  </form>
+</div>

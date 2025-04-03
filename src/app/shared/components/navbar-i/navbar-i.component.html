@@ -1,0 +1,35 @@
+<!-- Barra de navegación con diseño moderno y dinámico -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+  
+  <!-- Logo e icono -->
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <i class="fas fa-coins fa-lg me-2 logo-icon"></i> RFL
+  </a>
+
+  <!-- Botón hamburguesa para dispositivos pequeños -->
+  <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Menú de navegación -->
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      
+      <!-- Opción de iniciar sesión -->
+      <li class="nav-item">
+        <a class="nav-link btn-login" [routerLink]="['/usuarios/login']">
+          <i class="fas fa-sign-in-alt me-1"></i> Iniciar sesión
+        </a>
+      </li>
+      
+      <!-- Opción de registro -->
+      <li class="nav-item ms-2">
+        <a class="nav-link btn-register" [routerLink]="['/usuarios/registro']">
+          <i class="fas fa-user-plus me-1"></i> Registrarse
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+</nav>

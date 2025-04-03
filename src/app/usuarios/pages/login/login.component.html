@@ -1,0 +1,80 @@
+<!-- Contenedor principal del formulario de inicio de sesión -->
+<div class="login-container">
+
+  <!-- Formulario de inicio de sesión con Angular Reactive Forms -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+    <!-- Título centrado del formulario -->
+    <h2 class="text-center">Iniciar Sesión</h2>
+
+    <!-- Campo de entrada para el usuario (correo electrónico) -->
+    <label for="usuario" class="form-label">
+      <i class="fas fa-user"></i> Usuario
+    </label>
+    
+    <div class="input-group mb-3">
+      <!-- Ícono dentro del campo de entrada -->
+      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+      <!-- Input controlado por Angular Forms con validación -->
+      <input type="email" id="usuario" formControlName="usuario" class="form-control" placeholder="Ingrese su Correo">
+    </div>
+
+    <!-- Validaciones para el campo de usuario -->
+    @if (loginForm.get('usuario')?.touched) {
+      @if (loginForm.get('usuario')?.hasError('required')) {
+        <div class="error-text">
+          <i class="fas fa-exclamation-circle"></i> El correo es obligatorio.
+        </div>
+      } @else {
+        <div class="valid-text">
+          <i class="fas fa-check-circle"></i> ¡Correo válido!
+        </div>
+      }
+    }
+
+    <!-- Campo de entrada para la contraseña -->
+    <label for="password" class="form-label">
+      <i class="fas fa-lock"></i> Contraseña
+    </label>
+    
+    <div class="input-group mb-3">
+      <!-- Ícono dentro del campo de entrada -->
+      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+      <!-- Input para la contraseña con validación en Angular Forms -->
+      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Ingrese su Contraseña">
+    </div>
+
+    <!-- Validaciones para el campo de contraseña -->
+    @if (loginForm.get('password')?.touched) {
+      @if (loginForm.get('password')?.hasError('required')) {
+        <div class="error-text">
+          <i class="fas fa-exclamation-circle"></i> La contraseña es obligatoria.
+        </div>
+      } @else if (loginForm.get('password')?.hasError('minlength')) {
+        <div class="error-text">
+          <i class="fas fa-exclamation-circle"></i> La contraseña debe tener al menos 8 caracteres.
+        </div>
+      } @else {
+        <div class="valid-text">
+          <i class="fas fa-check-circle"></i> ¡Contraseña válida!
+        </div>
+      }
+    }
+
+    <!-- Botón para enviar el formulario -->
+    <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+
+    <!-- Enlaces de recuperación de contraseña y registro -->
+    <div class="d-flex justify-content-between mt-3">
+      <!-- Enlace a la página para recuperar la contraseña -->
+      <a [routerLink]="['/usuarios/olvide-contrasena']" class="text-decoration-none">
+        <i class="fas fa-question-circle"></i> ¿Olvidaste tu contraseña?
+      </a>
+      <!-- Enlace a la página de registro de usuario -->
+      <a [routerLink]="['/usuarios/registro']" class="text-decoration-none">
+        <i class="fas fa-user-plus"></i> Registrar
+      </a>
+    </div>
+
+  </form>
+</div>

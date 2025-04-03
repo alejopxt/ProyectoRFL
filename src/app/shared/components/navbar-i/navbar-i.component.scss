@@ -1,0 +1,109 @@
+.navbar {
+  background: linear-gradient(135deg, #AEE6E6, #CDA9F1, #DFFF6D);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    i {
+      font-size: 2rem;
+      color: #fff;
+      animation: bounce 1.5s infinite alternate;
+    }
+  }
+
+  .navbar-toggler {
+    font-size: 1.8rem;
+    border: none;
+    color: #fff;
+    background: transparent;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        color: #FFE4C4;
+        transform: scale(1.1);
+      }
+    }
+
+    .btn-login, .btn-register {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-login {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: 2px solid #fff;
+
+      &:hover {
+        background: #fff;
+        color: #7FD1B9;
+      }
+    }
+
+    .btn-register {
+      background: #FFE4C4;
+      color: #7FD1B9;
+      border: none;
+
+      &:hover {
+        background: #FFD4A3;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Animación sutil para el logo
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+// Estilos para móviles
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
