@@ -1,109 +1,129 @@
+@import '../../../../styles/variables';
+
+// Estilos generales del navbar
 .navbar {
-  background: linear-gradient(135deg, #AEE6E6, #CDA9F1, #DFFF6D);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
+  background: $fondo-navbar;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 10px $sombra-navbar;
+  border-bottom: 2px solid $borde-navbar;
+  animation: fadeInDown 0.8s ease-in-out;
 
   .navbar-brand {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: $titulo-navbar;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: transform 0.3s ease;
+    gap: 8px;
 
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    i {
-      font-size: 2rem;
-      color: #fff;
-      animation: bounce 1.5s infinite alternate;
+    .logo-icon {
+      color: $icono-navbar;
+      font-size: 1.8rem;
+      animation: rotateLogo 3s linear infinite;
     }
   }
+}
 
-  .navbar-toggler {
-    font-size: 1.8rem;
-    border: none;
-    color: #fff;
-    background: transparent;
-    transition: transform 0.3s ease;
+// Estilos del botón hamburguesa (responsive)
+.navbar-toggler {
+  border: none;
+  background: transparent;
 
-    &:hover {
-      transform: rotate(90deg);
-    }
+  .navbar-toggler-icon {
+    background-image: none;
+    font-size: 1.5rem;
+    color: $titulo-navbar;
   }
 
-  .navbar-nav {
-    .nav-item {
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      transition: color 0.3s ease, transform 0.3s ease;
+  &:hover {
+    animation: buttonHover 0.5s ease-in-out;
+  }
+}
 
-      &:hover {
-        color: #FFE4C4;
-        transform: scale(1.1);
-      }
-    }
+// Menú de navegación
+.navbar-nav {
+  .nav-item {
+    margin: 0 10px;
 
-    .btn-login, .btn-register {
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+    .nav-link {
       font-size: 1.1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .btn-login {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      border: 2px solid #fff;
+      font-weight: 500;
+      color: $texto-navbar;
+      transition: color 0.3s ease-in-out;
 
       &:hover {
-        background: #fff;
-        color: #7FD1B9;
-      }
-    }
-
-    .btn-register {
-      background: #FFE4C4;
-      color: #7FD1B9;
-      border: none;
-
-      &:hover {
-        background: #FFD4A3;
-        color: #fff;
+        color: $hover-navbar;
       }
     }
   }
 }
 
-// Animación sutil para el logo
-@keyframes bounce {
-  from {
-    transform: translateY(0);
+// Botones de login y registro
+.btn-login, .btn-register {
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-login {
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  background: transparent;
+  color: $titulo-navbar; 
+  border: 2px solid $titulo-navbar; 
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background: $titulo-navbar;
+    color: #fff;
+    animation: bounceHover 0.6s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 119, 182, 0.4);
   }
-  to {
-    transform: translateY(-5px);
+
+  &:focus {
+    animation: pulseGlow 1.5s infinite;
   }
 }
 
-// Estilos para móviles
+.btn-register {
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  background: $icono-navbar;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background: darken($icono-navbar, 10%);
+    animation: bounceHover 0.6s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 168, 107, 0.4);
+  }
+
+  &:focus {
+    animation: pulseGlow 1.5s infinite;
+  }
+}
+
+
+// Responsive Design
 @media (max-width: 768px) {
-  .navbar-toggler {
-    display: block;
+  .navbar-nav {
+    text-align: center;
+
+    .nav-item {
+      margin-bottom: 10px;
+    }
   }
 
-  .navbar-collapse {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    border-radius: 10px;
+  .btn-login, .btn-register {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
+

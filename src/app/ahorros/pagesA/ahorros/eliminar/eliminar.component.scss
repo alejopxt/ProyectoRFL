@@ -1,0 +1,135 @@
+@import '../../../../../styles/variables';
+
+// 📌 Contenedor principal
+.container {
+  animation: fadeIn 0.8s ease-in-out;
+  padding: 2rem;
+
+  h1 {
+    color: $titulo-color;
+    font-weight: bold;
+    animation: fadeInDown 0.8s ease-in-out;
+  }
+}
+
+// 📌 Tabla de ingresos
+.table {
+  border: 1px solid $borde-suave;
+  box-shadow: 0 4px 8px $sombra;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $tarjeta-fondo;
+  animation: fadeInUp 1s ease;
+
+  thead {
+    background: $degradado-navbar;
+    color: white;
+
+    th {
+      padding: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($borde-suave, 25%);
+      }
+
+      td {
+        padding: 0.8rem;
+        color: $texto-principal;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// 📌 Botón de borrar
+.btn-danger {
+  background-color: $resaltado-financiero;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 168, 107, 0.2);
+
+  &:hover {
+    background-color: darken($resaltado-financiero, 10%);
+    transform: scale(1.05);
+    animation: bounceHover 0.4s ease;
+  }
+}
+
+// 📌 Sidebar
+nav {
+  background-color: $fondo-navbar;
+  border-right: 2px solid $borde-navbar;
+  box-shadow: 0 0 8px $sombra-navbar;
+
+  h4 {
+    color: $titulo-navbar;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
+  }
+
+  .nav-link {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $hover-navbar;
+      border-radius: 10px;
+    }
+  }
+
+  a {
+    color: $texto-navbar;
+
+    h5 {
+      font-weight: bold;
+      color: $titulo-color;
+    }
+
+    &:hover h5 {
+      color: $icono-navbar;
+    }
+  }
+}
+
+// 📌 Modal eliminar ingreso
+#modalEliminarIngreso {
+  .modal-content {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .modal-header {
+    background: $degradado-footer;
+    color: white;
+    border-bottom: none;
+    h5 {
+      font-weight: bold;
+    }
+  }
+
+  .modal-body {
+    color: $texto-principal;
+    font-size: 1rem;
+  }
+
+  .modal-footer {
+    border-top: none;
+
+    .btn {
+      border-radius: 10px;
+    }
+
+    .btn-danger {
+      background-color: darken($resaltado-financiero, 5%);
+    }
+  }
+}

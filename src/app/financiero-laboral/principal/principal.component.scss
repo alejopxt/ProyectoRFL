@@ -1,8 +1,83 @@
+@import '../../../styles/variables';
+
+// 🧱 Layout general
 .container-fluid {
-    background: linear-gradient(135deg, #B8E6C1, #F7D7C4, #F7B4B4);
-    backdrop-filter: blur(8px);
+  background-color: $fondo-principal;
+  min-height: 100vh;
+  padding: 0;
+} 
+
+// 📦 Sidebar / Nav izquierdo
+nav {
+  background: $degradado-navbar;
+  border-right: 2px solid $borde-navbar;
+  box-shadow: 2px 0 5px $sombra-navbar;
+  animation: fadeInDown 0.5s ease;
+
+  h4 {
+    color: $titulo-color;
+    font-weight: bold;
+    margin: 1rem 0;
   }
 
-.container {
-    background: #333;
+  a {
+    color: $texto-navbar;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $icono-navbar;
+      transform: scale(1.05);
+      animation: bounceHover 0.5s;
+    }
+  }
+
+  svg {
+    color: $icono-navbar;
+  }
+}
+
+// 📊 Imágenes de gráficas
+img {
+  margin: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px $sombra;
+  animation: fadeInUp 0.7s ease;
+}
+
+// 📝 Título e información
+h2 {
+  color: $titulo-color;
+  font-weight: 700;
+  margin: 2rem 1rem 1rem 0;
+  animation: fadeIn 0.7s ease;
+}
+
+// 📋 Tabla de datos
+.table {
+  background-color: $tarjeta-fondo;
+  border: 1px solid $borde-suave;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px $sombra-suave;
+  animation: fadeInUp 1s ease;
+
+  thead {
+    background-color: lighten($borde-suave, 15%);
+    color: $titulo-color;
+    font-weight: bold;
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($borde-suave, 25%);
+      }
+    }
+
+    td {
+      color: $texto-principal;
+    }
+  }
 }

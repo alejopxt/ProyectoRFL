@@ -1,141 +1,145 @@
-.footer {
-  background: linear-gradient(135deg, rgba(173, 216, 230, 0.9), rgba(218, 180, 255, 0.9), rgba(173, 255, 168, 0.9));
-  color: #fff;
+@import '../../../../styles/variables';
+
+// Estilos de la sección de inicio
+.inicio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 2rem 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px 15px 0 0;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  padding: 50px 20px;
+  background: $fondo-principal;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+
+  .hero-text {
+    max-width: 800px;
+    margin-bottom: 40px;
+    color: $texto-principal;
+    animation: fadeIn 1s ease-in-out 0.5s forwards;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: $titulo-color;
+      overflow: hidden;
+      border-right: 3px solid $titulo-color;
+      white-space: nowrap;
+      width: 0;
+      display: inline-block;
+      animation: typeWriter 2s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: darken($texto-principal, 10%);
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: darken($texto-principal, 20%);
+    }
+  }
+}
+
+// Animación blink que no está en variables.scss, así que sí se define aquí
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+// Sección de características destacadas
+.feature-card {
+  background: $tarjeta-fondo;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px $sombra;
+  text-align: center;
   transition: all 0.3s ease-in-out;
+  border: 2px solid $borde-suave;
+  min-height: 200px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    animation: bounce 0.5s ease-in-out;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    color: $resaltado-financiero;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $titulo-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: darken($texto-principal, 20%);
+  }
+}
+
+// Estilos del footer
+.footer {
+  background: $fondo-footer;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0px -2px 10px $sombra-suave;
+  animation: fadeInUp 1s ease-in-out;
 
   h5 {
-    font-size: 1.7rem;
+    color: $titulo-footer;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 1rem;
-    color: #fff;
-    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 1s ease-in-out 0.3s forwards;
   }
 
   .footer-icon {
-    color: #FDE68A;
-    font-size: 2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-
-    &:hover {
-      transform: scale(1.2) rotate(10deg);
-      color: #AEE6E6;
-    }
-  }
-
-  .row {
-    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: $icono-footer;
+    animation: rotateIcon 4s linear infinite;
   }
 
   .custom-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: $tarjeta-fondo;
     border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1rem;
-    transition: all 0.4s ease-in-out;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    box-shadow: 0px 4px 10px $sombra-suave;
+    border: 2px solid $tarjeta-borde;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.5s;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+      animation: glow 1.5s infinite alternate ease-in-out;
     }
 
     .custom-icon {
-      color: #FFD700;
-      transition: transform 0.3s ease, color 0.3s ease;
-
-      &:hover {
-        transform: rotate(10deg) scale(1.2);
-        color: #FF90BC;
-      }
+      font-size: 2rem;
+      color: $icono-footer;
+      margin-bottom: 10px;
     }
 
-    .card-text {
+    p {
       font-size: 1rem;
-      color: #fff;
-      font-weight: 500;
+      color: darken($texto-principal, 15%);
     }
-  }
-
-  .divider {
-    height: 3px;
-    width: 85%;
-    background: linear-gradient(90deg, #FFD700, #AEE6E6);
-    margin: 1.5rem auto;
-    border-radius: 5px;
-  }
-
-  p.small {
-    font-size: 0.9rem;
-    opacity: 0.85;
-    margin-top: 0.5rem;
-    color: #fff;
-
-    i {
-      color: #FDE68A;
-      font-size: 1.1rem;
-      margin-right: 0.3rem;
-    }
-  }
-
-  // Fondo de partículas animadas
-  &::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 50%);
-    opacity: 0.6;
-    animation: floating 8s infinite ease-in-out;
-  }
-}
-
-// Animaciones
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-// Media Queries para responsividad
-@media (max-width: 768px) {
-  .footer {
-    padding: 1.5rem 0;
-  }
-
-  .custom-card {
-    padding: 1rem;
-    margin: 0.5rem;
   }
 }

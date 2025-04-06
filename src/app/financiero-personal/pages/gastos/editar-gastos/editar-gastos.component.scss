@@ -1,0 +1,105 @@
+@import '../../../../../styles/variables';
+
+// Contenedor general
+.container {
+  padding: 2rem;
+  background-color: $fondo-principal;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+// Título principal
+h1 {
+  color: $titulo-color;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px $sombra;
+  animation: fadeInDown 0.6s ease-in-out;
+}
+
+// Tabla
+.table {
+  background-color: $tarjeta-fondo;
+  border: 1px solid $borde-suave;
+  box-shadow: 0 2px 8px $sombra;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  animation: fadeInUp 0.7s ease-in-out;
+
+  th {
+    background-color: $fondo-navbar;
+    color: $titulo-color;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  td {
+    color: $texto-principal;
+    vertical-align: middle;
+  }
+
+  .btn-warning {
+    background-color: $resaltado-financiero;
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    animation: bounceHover 1s infinite;
+
+    &:hover {
+      background-color: lighten($resaltado-financiero, 10%);
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Modal
+#modalEditarIngreso {
+  .modal-content {
+    background-color: $tarjeta-fondo;
+    border: 1px solid $borde-suave;
+    box-shadow: 0 4px 12px $sombra-suave;
+    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 1rem;
+  }
+
+  .modal-header, .modal-footer {
+    background: $fondo-footer;
+    color: $texto-footer;
+    border-bottom: 1px solid $tarjeta-borde;
+  }
+
+  .modal-title {
+    color: $titulo-footer;
+    font-weight: bold;
+  }
+
+  .form-control {
+    border: 1px solid $borde-suave;
+    border-radius: 0.5rem;
+    box-shadow: none;
+
+    &:focus {
+      border-color: $resaltado-financiero;
+      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3);
+    }
+  }
+
+  .btn-primary {
+    background: $icono-navbar;
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+      background: lighten($icono-navbar, 10%);
+    }
+  }
+
+  .btn-secondary {
+    background-color: $borde-suave;
+    border: none;
+    color: $texto-principal;
+
+    &:hover {
+      background-color: darken($borde-suave, 10%);
+    }
+  }
+}
