@@ -1,79 +1,90 @@
+// Importa las variables globales de color y estilos
 @import '../../../../styles/variables';
 
+// Contenedor principal del formulario de registro
 .register-container {
-  display: flex;
+  display: flex; // Permite centrar el contenido horizontal y verticalmente
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: $fondo-principal;
-  animation: fadeIn 0.8s ease-in-out;
+  min-height: 100vh; // Ocupa toda la altura de la pantalla
+  background: $fondo-principal; // Color de fondo desde variables SCSS
+  animation: fadeIn 0.8s ease-in-out; // Animación suave de entrada
 }
 
+// Estilo para el formulario de registro
 .register-form {
-  background-color: $tarjeta-fondo;
-  border: 1px solid $borde-suave;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 4px 10px $sombra;
+  background-color: $tarjeta-fondo; // Fondo suave para el formulario
+  border: 1px solid $borde-suave; // Borde fino y elegante
+  border-radius: 1.5rem; // Bordes redondeados
+  padding: 2rem; // Espaciado interno
+  box-shadow: 0 4px 10px $sombra; // Sombra suave
   max-width: 800px;
   width: 100%;
-  animation: fadeInUp 1s ease-in-out;
+  animation: fadeInUp 1s ease-in-out; // Animación de entrada desde abajo
 }
 
+// Estilo para el título del formulario (ej. "Crear cuenta")
 h2 {
-  color: $titulo-color;
-  font-weight: 700;
+  color: $titulo-color; // Color del título
+  font-weight: 700; // Negrita
   margin-bottom: 1.5rem;
-  animation: fadeInDown 1s ease-in-out;
+  animation: fadeInDown 1s ease-in-out; // Animación de entrada desde arriba
 }
 
+// Etiquetas de los campos del formulario
 .form-label {
   color: $texto-principal;
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
 
+// Grupo de campos de entrada
 .input-group {
   transition: all 0.3s ease;
   border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  overflow: hidden; // Para que no se salgan los bordes redondeados
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); // Sombra muy suave para profundidad
   
   .input-group-text {
-    background-color: lighten($icono-navbar, 40%);
+    background-color: lighten($icono-navbar, 40%); // Fondo más claro para los íconos
     border: none;
-    color: $icono-navbar;
+    color: $icono-navbar; // Color de íconos
   }
 
+  // Estilo para los inputs y selects
   input,
   select {
     border: none;
     border-left: 1px solid $borde-suave;
     transition: box-shadow 0.3s ease;
+
+    // Estilo al enfocar el campo
     &:focus {
-      box-shadow: 0 0 5px rgba(0,168,107,0.3);
+      box-shadow: 0 0 5px rgba(0,168,107,0.3); // Efecto verde suave
       outline: none;
     }
   }
 }
 
+// Botón primario (ej. Registrar)
 .btn-primary {
-  background-color: $icono-navbar;
+  background-color: $icono-navbar; // Color principal del botón
   border: none;
   padding: 0.6rem 1.5rem;
   border-radius: 2rem;
   color: white;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
-  animation: buttonHover 2s infinite;
+  animation: buttonHover 2s infinite; // Animación cíclica
 
   &:hover {
     background-color: $hover-navbar;
-    box-shadow: 0 0 10px rgba(0,168,107,0.3);
-    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,168,107,0.3); // Sombra suave al pasar el mouse
+    transform: scale(1.05); // Efecto de agrandamiento
   }
 }
 
+// Botón secundario (ej. Cancelar, Volver)
 .btn-outline-secondary {
   border: 2px solid $icono-navbar;
   color: $icono-navbar;
@@ -91,12 +102,13 @@ h2 {
   }
 }
 
+// Adaptabilidad para pantallas pequeñas (responsive)
 @media (max-width: 768px) {
   .register-form {
-    padding: 1.5rem;
+    padding: 1.5rem; // Reduce el padding en dispositivos móviles
   }
 
   .input-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; // Más espacio entre campos
   }
 }

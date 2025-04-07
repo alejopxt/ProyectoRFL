@@ -1,67 +1,79 @@
+// Importa las variables globales (colores, sombras, fuentes, etc.)
 @import '../../../../../styles/variables';
 
-// Estilos para el contenedor principal
+// Estilos del contenedor principal del formulario o componente
 .container {
-  padding: 2rem;
-  background-color: $fondo-principal;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px $sombra;
+  padding: 2rem; // Espaciado interno alrededor del contenido
+  background-color: $fondo-principal; // Color de fondo desde variables
+  border-radius: 1rem; // Bordes redondeados
+  box-shadow: 0 4px 8px $sombra; // Sombra suave para profundidad visual
 
+  // Título principal dentro del contenedor
   h1 {
-    color: $titulo-color;
-    font-weight: bold;
-    animation: fadeInDown 0.5s ease-in-out;
+    color: $titulo-color; // Color del título
+    font-weight: bold; // Texto en negrita
+    animation: fadeInDown 0.5s ease-in-out; // Animación al aparecer
   }
 
+  // Etiquetas de los campos del formulario
   .form-label {
-    color: $texto-principal;
-    font-weight: 500;
+    color: $texto-principal; // Color del texto de la etiqueta
+    font-weight: 500; // Seminegrita para mejor legibilidad
   }
 
+  // Campos de entrada (input, textarea, etc.)
   .form-control {
-    border: 1px solid $borde-suave;
-    border-radius: 1rem;
-    padding: 0.75rem;
-    box-shadow: none;
-    transition: all 0.3s ease;
+    border: 1px solid $borde-suave; // Borde con color suave
+    border-radius: 1rem; // Bordes redondeados
+    padding: 0.75rem; // Espaciado interno
+    box-shadow: none; // Sin sombra por defecto
+    transition: all 0.3s ease; // Transición suave al interactuar
 
+    // Estilo cuando el input está enfocado (click o tab)
     &:focus {
-      border-color: $resaltado-financiero;
-      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3);
+      border-color: $resaltado-financiero; // Borde cambia a color destacado
+      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3); // Brillo leve alrededor
     }
   }
 
+  // Estilos base para botones dentro del contenedor
   .btn {
-    font-weight: bold;
-    transition: all 0.3s ease;
-    animation: fadeIn 0.5s ease;
+    font-weight: bold; // Texto más grueso
+    transition: all 0.3s ease; // Transición al pasar el mouse
+    animation: fadeIn 0.5s ease; // Animación de entrada
 
+    // Botón con clase Bootstrap "btn-light" personalizado
     &.btn-light {
-      color: $texto-principal;
-      background: $degradado-navbar;
-      border: none;
-      box-shadow: 0 2px 6px $sombra;
+      color: $texto-principal; // Color del texto
+      background: $degradado-navbar; // Fondo con degradado suave
+      border: none; // Sin borde
+      box-shadow: 0 2px 6px $sombra; // Sombra ligera
 
+      // Efecto al pasar el mouse sobre el botón
       &:hover {
-        transform: scale(1.05);
-        background: $neon-efecto;
-        box-shadow: 0 4px 12px rgba(0, 168, 107, 0.4);
+        transform: scale(1.05); // Aumenta ligeramente el tamaño
+        background: $neon-efecto; // Cambia a fondo llamativo
+        box-shadow: 0 4px 12px rgba(0, 168, 107, 0.4); // Sombra más intensa
       }
     }
 
+    // Botón de cancelar con colores personalizados
     &.btn-cancelar {
-      background-color: #f7b4b4; // pastel rosado para cancelar
-      color: #fff;
+      background-color: #f7b4b4; // Fondo rosado pastel
+      color: #fff; // Texto blanco
 
+      // Oscurece el fondo cuando se pasa el mouse
       &:hover {
         background-color: darken(#f7b4b4, 10%);
       }
     }
 
+    // Botón de crear con colores personalizados
     &.btn-crear {
-      background-color: #B8E6C1; // verde menta para confirmar
-      color: #fff;
+      background-color: #B8E6C1; // Fondo verde pastel
+      color: #fff; // Texto blanco
 
+      // Oscurece el fondo cuando se pasa el mouse
       &:hover {
         background-color: darken(#B8E6C1, 10%);
       }
@@ -69,10 +81,10 @@
   }
 }
 
-// Ajustes específicos para la modal (si se abre con estilos globales)
+// Estilo para el cuerpo del modal (ventana emergente)
 .modal-body {
-  animation: fadeInUp 0.5s ease-in-out;
-  background-color: $tarjeta-fondo;
-  border-radius: 1rem;
-  padding: 2rem;
+  animation: fadeInUp 0.5s ease-in-out; // Animación de entrada desde abajo
+  background-color: $tarjeta-fondo; // Fondo del modal desde variables
+  border-radius: 1rem; // Bordes redondeados
+  padding: 2rem; // Espaciado interno
 }

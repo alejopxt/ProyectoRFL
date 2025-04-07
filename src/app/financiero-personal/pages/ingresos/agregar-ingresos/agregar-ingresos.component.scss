@@ -1,45 +1,46 @@
+// Importamos las variables globales para usar colores y sombras predefinidos
 @import '../../../../../styles/variables';
 
-
-// Contenedor principal
+// Estilo del contenedor principal
 .container {
-  padding: 2rem;
-  background-color: $fondo-principal;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 12px $sombra;
-  animation: fadeIn 0.8s ease-in-out;
+  padding: 2rem; // Espaciado interno
+  background-color: $fondo-principal; // Fondo general
+  border-radius: 1.5rem; // Bordes redondeados
+  box-shadow: 0 4px 12px $sombra; // Sombra envolvente
+  animation: fadeIn 0.8s ease-in-out; // Animación suave de entrada
 }
 
-// Título principal
+// Título principal de la vista
 h1 {
   color: $titulo-color;
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.2rem; // Tamaño grande para destacar
   margin-bottom: 1rem;
-  animation: fadeInDown 0.6s ease;
+  animation: fadeInDown 0.6s ease; // Baja desde arriba con animación
 }
 
-// Botón "Agregar Categoría Ingreso"
+// Botón claro con efecto animado (ej. “Agregar”, “Nuevo”)
 .btn-light {
   background-color: $resaltado-financiero;
   color: white;
   font-weight: 500;
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
+  transition: all 0.3s ease; // Transición suave
+  animation: pulse 2s infinite; // Efecto de latido continuo
 
   &:hover {
-    background-color: darken($resaltado-financiero, 10%);
-    transform: scale(1.05);
+    background-color: darken($resaltado-financiero, 10%); // Oscurece al pasar el mouse
+    transform: scale(1.05); // Efecto zoom
   }
 }
 
-// Tabla de ingresos
+// Estilos generales para tabla de datos
 .table {
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 2px 6px $sombra-suave;
   animation: fadeInUp 0.6s ease;
 
+  // Encabezados de la tabla
   th {
     background-color: $borde-suave;
     color: $titulo-color;
@@ -47,25 +48,29 @@ h1 {
     padding: 1rem;
   }
 
+  // Celdas de contenido
   td {
     color: $texto-principal;
     vertical-align: middle;
     padding: 0.75rem;
   }
 
+  // Efecto al pasar el mouse sobre filas del cuerpo
   tbody tr:hover {
     background-color: lighten($borde-suave, 20%);
     cursor: pointer;
   }
 
+  // Botón de acción (ej. guardar, confirmar)
   .btn-success {
     background-color: $resaltado-financiero;
     border: none;
     font-weight: 600;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
-    animation: bounceHover 2s infinite;
+    animation: bounceHover 2s infinite; // Rebote animado
 
+    // Espacio entre ícono y texto
     svg {
       margin-right: 0.5rem;
     }
@@ -77,21 +82,23 @@ h1 {
   }
 }
 
-// Navegación lateral
+// Menú lateral de navegación
 nav {
   background: $fondo-navbar;
   border-right: 2px solid $borde-navbar;
   box-shadow: 0 0 8px $sombra-navbar;
   padding: 1rem;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 1rem 1rem 0; // Solo bordes derecho redondeados
   animation: fadeIn 0.8s ease;
 
+  // Título del menú lateral
   h4 {
     color: $titulo-navbar;
     font-weight: bold;
     margin: 1rem 0;
   }
 
+  // Enlaces del menú de navegación
   .nav-link {
     color: $texto-navbar;
     font-weight: 500;
@@ -100,30 +107,31 @@ nav {
     margin-bottom: 0.5rem;
     padding: 0.5rem;
 
+    // Efecto al pasar el mouse
     &:hover {
       background-color: $hover-navbar;
       color: white;
-      transform: translateX(5px);
+      transform: translateX(5px); // Se desplaza un poco a la derecha
     }
   }
 }
 
-// Responsividad (opcional)
+// Estilos adaptativos para pantallas pequeñas (ej. móviles)
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: 1rem; // Menor espaciado
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; // Título más pequeño
   }
 
   .btn-light,
   .btn-success {
-    width: 100%;
+    width: 100%; // Botones ocupan todo el ancho
   }
 
   nav {
-    display: none;
+    display: none; // Oculta menú lateral en móvil
   }
 }

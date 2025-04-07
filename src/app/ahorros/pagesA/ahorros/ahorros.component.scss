@@ -1,97 +1,106 @@
+// Importamos las variables globales que usamos en todo el proyecto (colores, sombras, etc.)
 @import '../../../../styles/variables';
 
-// Estilos generales para la sección de ingresos
+// Contenedor principal de la vista, con color de fondo, padding, bordes redondeados y animación
 .container {
-  background-color: $fondo-principal;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px $sombra;
-  animation: fadeIn 0.6s ease-in-out;
+  background-color: $fondo-principal; // Color de fondo principal
+  padding: 2rem; // Espaciado interno
+  border-radius: 1rem; // Bordes redondeados
+  box-shadow: 0 4px 8px $sombra; // Sombra para dar profundidad
+  animation: fadeIn 0.6s ease-in-out; // Animación al aparecer
 }
 
-// Título
+// Estilo del título principal (h1)
 h1 {
-  color: $titulo-color;
-  font-weight: bold;
-  animation: fadeInDown 0.5s ease-in-out;
+  color: $titulo-color; // Color personalizado del título
+  font-weight: bold; // Negrita
+  animation: fadeInDown 0.5s ease-in-out; // Animación de entrada hacia abajo
 }
 
-// Botones superiores
+// Estilos generales para los botones
 button {
-  background: $degradado-navbar;
-  color: white;
-  font-weight: 500;
-  border: none;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 6px $sombra;
+  background: $degradado-navbar; // Fondo con degradado igual al navbar
+  color: white; // Texto en blanco
+  font-weight: 500; // Seminegrita
+  border: none; // Sin borde
+  transition: transform 0.3s ease; // Transición suave al hacer hover
+  box-shadow: 0 4px 6px $sombra; // Sombra para dar elevación
 
+  // Al pasar el mouse sobre el botón
   &:hover {
-    background: $hover-navbar;
-    transform: scale(1.05);
+    background: $hover-navbar; // Cambia el fondo al color de hover
+    transform: scale(1.05); // Aumenta ligeramente el tamaño
   }
 }
 
-// Estilos de la tabla
+// Estilo para tablas
 .table {
-  border-radius: 1rem;
-  overflow: hidden;
-  background-color: $tarjeta-fondo;
-  box-shadow: 0 4px 6px $sombra-suave;
-  animation: fadeInUp 0.5s ease-in-out;
+  border-radius: 1rem; // Bordes redondeados
+  overflow: hidden; // Oculta el desbordamiento (útil para bordes)
+  background-color: $tarjeta-fondo; // Fondo de la tabla
+  box-shadow: 0 4px 6px $sombra-suave; // Sombra ligera
+  animation: fadeInUp 0.5s ease-in-out; // Animación de entrada hacia arriba
 
+  // Cabecera de la tabla
   th {
-    background-color: $borde-suave;
-    color: $titulo-color;
-    font-weight: 600;
+    background-color: $borde-suave; // Color de fondo de la cabecera
+    color: $titulo-color; // Texto en color del título
+    font-weight: 600; // Peso seminegrita
   }
 
+  // Celdas de la tabla
   td {
-    color: $texto-principal;
+    color: $texto-principal; // Color del texto principal
   }
 }
 
-// Interruptores de estado
+// Estilos para el switch de tipo "form-switch" (interruptor activado/desactivado)
 .form-switch {
   .form-check-input {
-    background-color: $resaltado-financiero;
-    border-color: $resaltado-financiero;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 5px rgba(0, 168, 107, 0.5);
+    background-color: $resaltado-financiero; // Color de fondo por defecto
+    border-color: $resaltado-financiero; // Borde del mismo color
+    transition: all 0.3s ease-in-out; // Transición suave
+    box-shadow: 0 0 5px rgba(0, 168, 107, 0.5); // Efecto de sombra verde
 
+    // Cuando el switch está activado
     &:checked {
-      background-color: $resaltado-financiero;
+      background-color: $resaltado-financiero; // Mantiene el color
     }
 
+    // Cuando está enfocado (al hacer clic)
     &:focus {
-      box-shadow: 0 0 0 0.25rem rgba(0, 168, 107, 0.25);
+      box-shadow: 0 0 0 0.25rem rgba(0, 168, 107, 0.25); // Sombra externa al enfocar
     }
   }
 }
 
-// Títulos de navegación lateral
+// Título del menú lateral
 nav h4 {
-  color: $titulo-color;
-  font-weight: 600;
+  color: $titulo-color; // Color del título
+  font-weight: 600; // Seminegrita
 }
 
-// Sidebar navegación
+// Estilos para el menú lateral (navbar)
 nav {
-  background: $fondo-navbar;
-  border-right: 1px solid $borde-navbar;
-  box-shadow: 2px 0 6px $sombra;
+  background: $fondo-navbar; // Fondo del navbar
+  border-right: 1px solid $borde-navbar; // Borde derecho
+  box-shadow: 2px 0 6px $sombra; // Sombra lateral para profundidad
 }
 
+// Enlaces dentro del navbar
 .nav-link {
-  color: $texto-navbar !important;
+  color: $texto-navbar !important; // Color del texto de los links
 
+  // Al pasar el mouse por encima
   &:hover {
-    color: $icono-navbar !important;
-    background-color: lighten($fondo-navbar, 5%);
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
+    color: $icono-navbar !important; // Cambia el color del texto al pasar
+    background-color: lighten($fondo-navbar, 5%); // Aclara el fondo
+    transform: scale(1.02); // Agranda un poco
+    transition: all 0.2s ease-in-out; // Transición suave
   }
 }
 
+// Estilos para las líneas divisoras (hr)
 hr {
-  border-color: $borde-suave;
+  border-color: $borde-suave; // Color del borde de la línea
 }

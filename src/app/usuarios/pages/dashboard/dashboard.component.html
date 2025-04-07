@@ -1,39 +1,54 @@
-<!-- Componente de la barra de navegación -->
+<!-- Componente de barra de navegación (Navbar) personalizado.
+     Generalmente contiene enlaces y el logo. Es reutilizable en varias páginas. -->
 <app-navbar-d></app-navbar-d>
 
-<!-- Contenedor principal con margen superior -->
+<!-- Contenedor principal con márgenes superiores. Utiliza clases de Bootstrap para diseño responsivo. -->
 <div class="container mt-4">
-  <!-- Título centrado del dashboard -->
+  
+  <!-- Título centrado de la sección del dashboard. -->
   <div class="text-center mb-4">
     <h2 class="dashboard-title">
-      <!-- Ícono de gráfico de rendimiento financiero -->
+      <!-- Ícono decorativo (línea de crecimiento financiero) usando FontAwesome. -->
       <i class="fas fa-chart-line me-2"></i> Rendimiento Financiero Laboral
     </h2>
   </div>
 
-  <!-- Sección para mostrar las tarjetas de información financiera -->
+  <!-- Fila principal para mostrar tarjetas de información financiera. -->
   <div class="row">
-    <!-- Bucle que recorre las secciones financieras -->
+    
+    <!-- Bucle para recorrer las secciones financieras. 
+         'financialSections' es un array con objetos que tienen icono, título y descripción. -->
     @for (section of financialSections; track section.title) {
+      
+      <!-- Cada tarjeta ocupa 6 columnas en pantallas medianas y 3 en pantallas grandes. -->
       <div class="col-md-6 col-lg-3">
-        <!-- Tarjeta que muestra información sobre una sección financiera -->
+
+        <!-- Tarjeta con sombra. Representa visualmente una sección financiera. -->
         <div class="card shadow-sm financial-card">
+
+          <!-- Contenido centrado dentro de la tarjeta. -->
           <div class="card-body text-center">
-            <!-- Ícono de la sección -->
+
+            <!-- Ícono dinámico de la sección financiera (por ejemplo, ingreso, gasto, ahorro, etc.). -->
             <i class="{{ section.icon }} fa-3x icon-style"></i>
-            <!-- Título de la sección -->
+
+            <!-- Título de la sección. -->
             <h5 class="card-title mt-3">{{ section.title }}</h5>
-            <!-- Descripción de la sección -->
+
+            <!-- Descripción breve de lo que representa esta sección. -->
             <p class="card-text">{{ section.description }}</p>
+
           </div>
         </div>
       </div>
     } 
-    <!-- Si no hay secciones financieras, se muestra este mensaje -->
+    
+    <!-- Si no hay datos en el array 'financialSections', se muestra este mensaje. -->
     @empty {
       <div class="col-12 text-center">
         <p>No hay secciones financieras disponibles.</p>
       </div>
     }
+
   </div>
 </div>

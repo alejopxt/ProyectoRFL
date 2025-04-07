@@ -7,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './navbar-i.component.scss'
 })
 export class NavbarIComponent {
-  isMenuOpen = false; // Variable booleana para controlar si el menú está abierto o cerrado
+  // Variable booleana que indica si el menú (en móviles o pantallas pequeñas) está abierto o cerrado
+  isMenuOpen = false; 
 
-  // Método para alternar el estado del menú entre abierto y cerrado
+  // Función que cambia el estado del menú: si está abierto lo cierra y viceversa
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen; // Cambia el valor de isMenuOpen (true/false)
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

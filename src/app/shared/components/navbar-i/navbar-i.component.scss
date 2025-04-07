@@ -1,56 +1,63 @@
+// Importa las variables de colores, sombras y estilos generales.
+// Permite que todo el diseño sea consistente y fácil de mantener.
 @import '../../../../styles/variables';
 
-// Estilos generales del navbar
+// Estilos generales para la barra de navegación
 .navbar {
-  background: $fondo-navbar;
-  padding: 15px 20px;
-  box-shadow: 0px 4px 10px $sombra-navbar;
-  border-bottom: 2px solid $borde-navbar;
-  animation: fadeInDown 0.8s ease-in-out;
+  background: $fondo-navbar; // Color de fondo desde variables
+  padding: 15px 20px; // Espaciado interno
+  box-shadow: 0px 4px 10px $sombra-navbar; // Sombra para efecto de elevación
+  border-bottom: 2px solid $borde-navbar; // Línea inferior decorativa
+  animation: fadeInDown 0.8s ease-in-out; // Animación de entrada
 
+  // Estilos del logo/título principal de la navbar
   .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $titulo-navbar;
-    display: flex;
+    font-size: 1.5rem; // Tamaño del texto
+    font-weight: bold; // Grosor
+    color: $titulo-navbar; // Color del título/logo
+    display: flex; // Alineación horizontal
     align-items: center;
-    gap: 8px;
+    gap: 8px; // Espacio entre ícono y texto
 
+    // Ícono del logo (por ejemplo, un símbolo al lado del nombre)
     .logo-icon {
-      color: $icono-navbar;
+      color: $icono-navbar; // Color del ícono
       font-size: 1.8rem;
-      animation: rotateLogo 3s linear infinite;
+      animation: rotateLogo 3s linear infinite; // Animación continua de rotación
     }
   }
 }
 
-// Estilos del botón hamburguesa (responsive)
+// Botón hamburguesa para mostrar menú en pantallas pequeñas
 .navbar-toggler {
-  border: none;
-  background: transparent;
+  border: none; // Sin borde
+  background: transparent; // Fondo transparente
 
+  // Ícono dentro del botón hamburguesa
   .navbar-toggler-icon {
-    background-image: none;
+    background-image: none; // Eliminamos el SVG por defecto
     font-size: 1.5rem;
-    color: $titulo-navbar;
+    color: $titulo-navbar; // Color igual al título
   }
 
+  // Animación al pasar el mouse por encima del botón
   &:hover {
     animation: buttonHover 0.5s ease-in-out;
   }
 }
 
-// Menú de navegación
+// Estilos para la lista de enlaces de navegación
 .navbar-nav {
   .nav-item {
-    margin: 0 10px;
+    margin: 0 10px; // Espaciado horizontal entre ítems
 
     .nav-link {
       font-size: 1.1rem;
       font-weight: 500;
-      color: $texto-navbar;
-      transition: color 0.3s ease-in-out;
+      color: $texto-navbar; // Color base del texto
+      transition: color 0.3s ease-in-out; // Transición suave
 
+      // Cambio de color al pasar el mouse
       &:hover {
         color: $hover-navbar;
       }
@@ -58,24 +65,22 @@
   }
 }
 
-// Botones de login y registro
+// Botones: login y registro
 .btn-login, .btn-register {
   padding: 8px 15px;
   border-radius: 8px;
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; // Transición general
 }
 
+// Estilo del botón "Iniciar sesión"
 .btn-login {
-  padding: 8px 15px;
-  border-radius: 8px;
-  font-weight: bold;
   font-size: 1rem;
-  background: transparent;
-  color: $titulo-navbar; 
-  border: 2px solid $titulo-navbar; 
-  transition: all 0.4s ease-in-out;
+  background: transparent; // Sin fondo
+  color: $titulo-navbar;
+  border: 2px solid $titulo-navbar;
 
+  // Hover: cambio de color y animación rebote
   &:hover {
     background: $titulo-navbar;
     color: #fff;
@@ -83,23 +88,21 @@
     box-shadow: 0 0 10px rgba(0, 119, 182, 0.4);
   }
 
+  // Focus: animación continua tipo "latido"
   &:focus {
     animation: pulseGlow 1.5s infinite;
   }
 }
 
+// Estilo del botón "Registrarse"
 .btn-register {
-  padding: 8px 15px;
-  border-radius: 8px;
-  font-weight: bold;
   font-size: 1rem;
-  background: $icono-navbar;
+  background: $icono-navbar; // Color definido en variables
   color: #fff;
   border: 2px solid transparent;
-  transition: all 0.4s ease-in-out;
 
   &:hover {
-    background: darken($icono-navbar, 10%);
+    background: darken($icono-navbar, 10%); // Oscurece el fondo
     animation: bounceHover 0.6s ease-in-out;
     box-shadow: 0 0 10px rgba(0, 168, 107, 0.4);
   }
@@ -109,21 +112,20 @@
   }
 }
 
-
-// Responsive Design
+// Estilos responsivos para móviles y tablets
 @media (max-width: 768px) {
   .navbar-nav {
     text-align: center;
 
     .nav-item {
-      margin-bottom: 10px;
+      margin-bottom: 10px; // Espaciado entre enlaces
     }
   }
 
+  // Botones ocupan todo el ancho en móviles
   .btn-login, .btn-register {
     display: block;
     width: 100%;
     text-align: center;
   }
 }
-

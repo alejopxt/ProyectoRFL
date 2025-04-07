@@ -1,95 +1,112 @@
+// Importamos variables globales (colores, sombras, etc.)
 @import '../../../../styles/variables';
 
+// Contenedor principal del login: ocupa toda la pantalla, centra el contenido
 .login-container {
-  background-color: $fondo-principal;
-  min-height: 100vh; // Para cubrir toda la pantalla
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  background-color: $fondo-principal; // Color de fondo definido en variables
+  min-height: 100vh; // Altura mínima: 100% del viewport
+  display: flex; // Usamos flexbox para centrar
+  justify-content: center; // Centrado horizontal
+  align-items: center; // Centrado vertical
+  padding: 2rem; // Espacio interno
 }
 
-
+// Formulario de login como una tarjeta
 .login-form {
-  background-color: $tarjeta-fondo;
-  padding: 2.5rem;
-  border-radius: 2xl;
-  box-shadow: 0 8px 16px $sombra;
-  width: 100%;
-  max-width: 400px;
-  animation: fadeInUp 0.8s ease-in-out;
+  background-color: $tarjeta-fondo; // Fondo de la tarjeta
+  padding: 2.5rem; // Espaciado interno
+  border-radius: 2xl; // Bordes redondeados grandes
+  box-shadow: 0 8px 16px $sombra; // Sombra para profundidad
+  width: 100%; // Ancho completo del contenedor padre
+  max-width: 400px; // Máximo ancho para que no se expanda demasiado
+  animation: fadeInUp 0.8s ease-in-out; // Animación al aparecer
 }
 
+// Título centrado del formulario
 h2.text-center {
-  color: $titulo-color;
-  margin-bottom: 2rem;
-  font-weight: 600;
+  color: $titulo-color; // Color del título
+  margin-bottom: 2rem; // Separación inferior
+  font-weight: 600; // Peso de la fuente
+  // animation opcional para hacerlo más llamativo
   // animation: pulseGlow 2s infinite;
 }
 
+// Etiquetas de los campos del formulario
 .form-label {
   color: $texto-principal;
   font-weight: 500;
-  margin-top: 1rem;
+  margin-top: 1rem; // Separación superior
 }
 
+// Estilo del ícono dentro del input
 .input-group-text {
-  background-color: $fondo-principal;
+  background-color: $fondo-principal; // Fondo similar al general
   border: 1px solid $borde-suave;
-  color: $icono-navbar;
-  animation: bounce 2s infinite;
+  color: $icono-navbar; // Color definido para íconos
+  animation: bounce 2s infinite; // Animación sutil
 }
 
+// Estilo del campo de entrada de texto
 .form-control {
-  border: 1px solid $borde-suave;
-  border-left: none;
-  transition: all 0.3s ease;
+  border: 1px solid $borde-suave; // Borde sutil
+  border-left: none; // Sin borde en la izquierda (por ícono)
+  transition: all 0.3s ease; // Transición al enfocar
+
   &:focus {
-    box-shadow: 0 0 5px $resaltado-financiero;
-    border-color: $resaltado-financiero;
+    box-shadow: 0 0 5px $resaltado-financiero; // Brillo al enfocar
+    border-color: $resaltado-financiero; // Cambio de color de borde
   }
 }
 
+// Botón de enviar (login)
 .btn-primary {
-  background: $degradado-navbar;
+  background: $degradado-navbar; // Fondo con degradado
   border: none;
   font-weight: bold;
-  animation: buttonHover 2s infinite;
+  animation: buttonHover 2s infinite; // Animación de atención
   transition: background 0.3s ease;
+
   &:hover {
-    background: $neon-efecto;
-    transform: scale(1.03);
+    background: $neon-efecto; // Efecto brillante al pasar el cursor
+    transform: scale(1.03); // Ligero agrandamiento
   }
 }
 
+// Texto para mostrar errores de validación
 .error-text {
   color: red;
   font-size: 0.875rem;
   margin-top: 0.3rem;
+
   i {
-    margin-right: 5px;
+    margin-right: 5px; // Espacio entre el ícono y el texto
   }
 }
 
+// Texto para mostrar validaciones correctas
 .valid-text {
-  color: $resaltado-financiero;
+  color: $resaltado-financiero; // Color verde de éxito
   font-size: 0.875rem;
   margin-top: 0.3rem;
+
   i {
     margin-right: 5px;
   }
 }
 
+// Estilo de los enlaces (recuperar contraseña, etc.)
 a.text-decoration-none {
   color: $titulo-navbar;
   font-size: 0.9rem;
   transition: color 0.3s ease;
+
   &:hover {
-    color: $icono-navbar;
-    text-decoration: underline;
+    color: $icono-navbar; // Cambio de color al pasar el cursor
+    text-decoration: underline; // Subrayado al pasar el cursor
   }
 }
 
+// Espaciado adicional para elementos con clase .d-flex
 .d-flex {
   margin-top: 1.5rem;
 }

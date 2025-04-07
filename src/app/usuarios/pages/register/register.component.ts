@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ExpresionesR } from 'app/core/config/expresiones-R';
 
 @Component({
   selector: 'app-register',
@@ -16,11 +17,11 @@ export class RegisterComponent {
   constructor(public fb: FormBuilder, public router: Router) {
     // Creación del formulario con los campos requeridos y sus validaciones
     this.registerForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(3)]],  // Campo obligatorio con mínimo 3 caracteres
-      correo: ['', [Validators.required, Validators.email]],  // Campo obligatorio y debe ser un correo válido
-      tipoDocumento: ['', Validators.required],  // Campo obligatorio
-      numeroDocumento: ['', [Validators.required, Validators.minLength(5)]],  // Campo obligatorio con mínimo 5 caracteres
-      password: ['', [Validators.required, Validators.minLength(8)]]  // Campo obligatorio con mínimo 8 caracteres
+      nombre: ['', [Validators.required, Validators.pattern(ExpresionesR.NOMBRE)]],
+      tipoDocumento: ['', Validators.required],
+      numeroDocumento: ['', [Validators.required, Validators.pattern(ExpresionesR.DOCUMENTO)]],
+      correo: ['', [Validators.required, Validators.pattern(ExpresionesR.EMAIL)]],
+      password: ['', [Validators.required, Validators.pattern(ExpresionesR.PASSWORD)]],
     });
   }
 

@@ -1,43 +1,51 @@
+// Importamos las variables de estilos globales definidas en variables.scss
 @import '../../../../styles/variables';
 
+// Estilos generales para el contenedor principal
 .container {
-  background-color: $fondo-principal;
-  border-radius: 1rem;
-  padding: 2rem;
-  animation: fadeIn 0.6s ease-in-out;
+  background-color: $fondo-principal; // Fondo claro y suave para mantener una apariencia limpia
+  border-radius: 1rem; // Bordes redondeados para un diseño moderno
+  padding: 2rem; // Espaciado interno para separar el contenido de los bordes
+  animation: fadeIn 0.6s ease-in-out; // Animación suave al aparecer
 }
 
+// Título del panel o sección del dashboard
 .dashboard-title {
-  color: $titulo-color;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px $sombra;
-  animation: fadeInDown 0.6s ease-out;
+  color: $titulo-color; // Color principal para títulos (resalta)
+  font-weight: bold; // Letra en negrita para destacar
+  text-shadow: 1px 1px 2px $sombra; // Sombra sutil para mejorar la visibilidad del texto
+  animation: fadeInDown 0.6s ease-out; // Animación descendente al cargar
 }
 
+// Tarjeta que contiene información financiera o resumida
 .financial-card {
-  background-color: $tarjeta-fondo;
-  border: 1px solid $borde-suave;
-  border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.5s ease-in-out;
+  background-color: $tarjeta-fondo; // Fondo blanco para enfoque limpio
+  border: 1px solid $borde-suave; // Borde con color suave, para separar visualmente
+  border-radius: 1rem; // Bordes redondeados para diseño amigable
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transiciones suaves al pasar el cursor
+  animation: fadeInUp 0.5s ease-in-out; // Animación ascendente al aparecer
 
+  // Efecto al pasar el cursor sobre la tarjeta
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px $resaltado-financiero;
-    animation: bounceHover 0.5s;
+    transform: scale(1.05); // Efecto de agrandamiento sutil
+    box-shadow: 0 0 15px $resaltado-financiero; // Resalta la tarjeta con sombra de color verde
+    animation: bounceHover 0.5s; // Animación de rebote al pasar el mouse
   }
 
+  // Estilo para íconos dentro de la tarjeta
   .icon-style {
-    color: $icono-navbar;
-    animation: pulseGlow 2s infinite;
+    color: $icono-navbar; // Color de íconos coherente con la navegación
+    animation: pulseGlow 2s infinite; // Efecto de brillo constante (animación repetitiva)
   }
 
+  // Título dentro de la tarjeta
   .card-title {
-    color: $texto-principal;
+    color: $texto-principal; // Color de texto estándar para títulos
   }
 
+  // Texto informativo dentro de la tarjeta
   .card-text {
-    color: $texto-principal;
-    font-size: 0.95rem;
+    color: $texto-principal; // Mismo color para mantener coherencia
+    font-size: 0.95rem; // Tamaño de texto ligeramente reducido
   }
 }

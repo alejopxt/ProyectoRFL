@@ -1,6 +1,7 @@
+// Variables globales del diseño
 @import '../../../../styles/variables';
 
-// Estilos generales para la sección de ingresos
+// Contenedor general de la vista
 .container {
   background-color: $fondo-principal;
   padding: 2rem;
@@ -9,14 +10,14 @@
   animation: fadeIn 0.6s ease-in-out;
 }
 
-// Título
+// Título principal
 h1 {
   color: $titulo-color;
   font-weight: bold;
   animation: fadeInDown 0.5s ease-in-out;
 }
 
-// Botones superiores
+// Estilo para botones generales
 button {
   background: $degradado-navbar;
   color: white;
@@ -31,7 +32,7 @@ button {
   }
 }
 
-// Estilos de la tabla
+// Estilo para la tabla de datos
 .table {
   border-radius: 1rem;
   overflow: hidden;
@@ -50,7 +51,7 @@ button {
   }
 }
 
-// Interruptores de estado
+// Estilo para interruptores de formulario (form-switch)
 .form-switch {
   .form-check-input {
     background-color: $resaltado-financiero;
@@ -68,19 +69,19 @@ button {
   }
 }
 
-// Títulos de navegación lateral
-nav h4 {
-  color: $titulo-color;
-  font-weight: 600;
-}
-
-// Sidebar navegación
+// Navegación lateral o superior
 nav {
   background: $fondo-navbar;
   border-right: 1px solid $borde-navbar;
   box-shadow: 2px 0 6px $sombra;
+
+  h4 {
+    color: $titulo-color;
+    font-weight: 600;
+  }
 }
 
+// Estilos para enlaces de navegación
 .nav-link {
   color: $texto-navbar !important;
 
@@ -92,6 +93,7 @@ nav {
   }
 }
 
+// Líneas divisorias
 hr {
   border-color: $borde-suave;
 }

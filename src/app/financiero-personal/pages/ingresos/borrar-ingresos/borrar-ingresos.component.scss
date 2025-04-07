@@ -1,43 +1,47 @@
+// Importamos las variables personalizadas (colores, sombras, etc.)
 @import '../../../../../styles/variables';
 
-// 📌 Contenedor principal
+// Contenedor principal de la vista
 .container {
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out; // Animación de entrada
   padding: 2rem;
 
+  // Título dentro del contenedor
   h1 {
     color: $titulo-color;
     font-weight: bold;
-    animation: fadeInDown 0.8s ease-in-out;
+    animation: fadeInDown 0.8s ease-in-out; // Aparece desde arriba
   }
 }
 
-// 📌 Tabla de ingresos
+// Estilos de la tabla de ingresos o registros
 .table {
-  border: 1px solid $borde-suave;
-  box-shadow: 0 4px 8px $sombra;
+  border: 1px solid $borde-suave; // Borde suave para delimitar
+  box-shadow: 0 4px 8px $sombra; // Sombra general para resaltar
   border-radius: 12px;
   overflow: hidden;
-  background-color: $tarjeta-fondo;
-  animation: fadeInUp 1s ease;
+  background-color: $tarjeta-fondo; // Color de fondo desde variable
+  animation: fadeInUp 1s ease; // Animación de aparición desde abajo
 
+  // Cabecera de la tabla
   thead {
-    background: $degradado-navbar;
+    background: $degradado-navbar; // Fondo con degradado
     color: white;
 
     th {
       padding: 1rem;
       font-weight: bold;
-      text-transform: uppercase;
+      text-transform: uppercase; // Texto en mayúsculas
     }
   }
 
+  // Cuerpo de la tabla
   tbody {
     tr {
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: lighten($borde-suave, 25%);
+        background-color: lighten($borde-suave, 25%); // Efecto hover suave
       }
 
       td {
@@ -49,42 +53,45 @@
   }
 }
 
-// 📌 Botón de borrar
+// Botón de acción peligrosa (ej. eliminar)
 .btn-danger {
   background-color: $resaltado-financiero;
   border: none;
   color: white;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 168, 107, 0.2);
+  box-shadow: 0 0 10px rgba(0, 168, 107, 0.2); // Brillo suave
 
   &:hover {
     background-color: darken($resaltado-financiero, 10%);
-    transform: scale(1.05);
-    animation: bounceHover 0.4s ease;
+    transform: scale(1.05); // Efecto de aumento
+    animation: bounceHover 0.4s ease; // Rebote ligero al hacer hover
   }
 }
 
-// 📌 Sidebar
+// Menú lateral de navegación
 nav {
   background-color: $fondo-navbar;
   border-right: 2px solid $borde-navbar;
   box-shadow: 0 0 8px $sombra-navbar;
 
+  // Título dentro del menú
   h4 {
     color: $titulo-navbar;
     font-weight: bold;
     animation: fadeInDown 1s ease-in-out;
   }
 
+  // Enlaces de navegación
   .nav-link {
     transition: all 0.3s ease;
 
     &:hover {
       background-color: $hover-navbar;
-      border-radius: 10px;
+      border-radius: 10px; // Efecto suave al pasar el mouse
     }
   }
 
+  // Estilo para los enlaces que contienen títulos
   a {
     color: $texto-navbar;
 
@@ -94,12 +101,12 @@ nav {
     }
 
     &:hover h5 {
-      color: $icono-navbar;
+      color: $icono-navbar; // Cambia el color del título al pasar el mouse
     }
   }
 }
 
-// 📌 Modal eliminar ingreso
+// Estilo del modal de confirmación para eliminar ingresos
 #modalEliminarIngreso {
   .modal-content {
     border-radius: 15px;
@@ -111,6 +118,7 @@ nav {
     background: $degradado-footer;
     color: white;
     border-bottom: none;
+
     h5 {
       font-weight: bold;
     }
@@ -129,7 +137,7 @@ nav {
     }
 
     .btn-danger {
-      background-color: darken($resaltado-financiero, 5%);
+      background-color: darken($resaltado-financiero, 5%); // Ligeramente más oscuro para resaltar
     }
   }
 }

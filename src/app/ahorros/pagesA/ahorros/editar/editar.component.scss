@@ -1,105 +1,115 @@
+// Importa las variables de diseño definidas globalmente (colores, sombras, etc.)
 @import '../../../../../styles/variables';
 
-// Contenedor general
+// Contenedor principal de la página o sección
 .container {
-  padding: 2rem;
-  background-color: $fondo-principal;
-  animation: fadeIn 0.5s ease-in-out;
+  padding: 2rem; // Espaciado interno general
+  background-color: $fondo-principal; // Fondo usando una variable
+  animation: fadeIn 0.5s ease-in-out; // Animación suave al aparecer
 }
 
 // Título principal
 h1 {
-  color: $titulo-color;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px $sombra;
-  animation: fadeInDown 0.6s ease-in-out;
+  color: $titulo-color; // Color del título
+  font-weight: bold; // Negrita
+  text-shadow: 1px 1px 2px $sombra; // Sombra para dar profundidad al texto
+  animation: fadeInDown 0.6s ease-in-out; // Animación descendente
 }
 
-// Tabla
+// Estilos para tablas (por ejemplo, tabla de ingresos o datos)
 .table {
-  background-color: $tarjeta-fondo;
-  border: 1px solid $borde-suave;
-  box-shadow: 0 2px 8px $sombra;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  animation: fadeInUp 0.7s ease-in-out;
+  background-color: $tarjeta-fondo; // Fondo tipo tarjeta
+  border: 1px solid $borde-suave; // Borde sutil
+  box-shadow: 0 2px 8px $sombra; // Sombra ligera para resaltar la tabla
+  border-radius: 0.75rem; // Bordes redondeados
+  overflow: hidden; // Oculta contenido que se salga del borde redondeado
+  animation: fadeInUp 0.7s ease-in-out; // Animación de entrada desde abajo
 
+  // Cabeceras de la tabla
   th {
-    background-color: $fondo-navbar;
-    color: $titulo-color;
-    font-weight: 600;
-    text-align: center;
+    background-color: $fondo-navbar; // Color de fondo para los encabezados
+    color: $titulo-color; // Color del texto
+    font-weight: 600; // Texto seminegrita
+    text-align: center; // Centra el contenido del encabezado
   }
 
+  // Celdas del cuerpo de la tabla
   td {
-    color: $texto-principal;
-    vertical-align: middle;
+    color: $texto-principal; // Color del texto del contenido
+    vertical-align: middle; // Centra verticalmente el texto
   }
 
+  // Botón de edición tipo advertencia dentro de la tabla
   .btn-warning {
-    background-color: $resaltado-financiero;
-    border: none;
-    color: white;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    animation: bounceHover 1s infinite;
+    background-color: $resaltado-financiero; // Color destacado (verde pastel)
+    border: none; // Sin bordes
+    color: white; // Texto blanco
+    font-weight: 500; // Texto seminegrita
+    transition: all 0.3s ease; // Transición suave al hacer hover
+    animation: bounceHover 1s infinite; // Animación de rebote
 
     &:hover {
-      background-color: lighten($resaltado-financiero, 10%);
-      transform: scale(1.05);
+      background-color: lighten($resaltado-financiero, 10%); // Aclara el color al pasar el mouse
+      transform: scale(1.05); // Aumenta ligeramente el tamaño
     }
   }
 }
 
-// Modal
+// Estilos personalizados para el modal de edición (por ID)
 #modalEditarIngreso {
+  // Contenido del modal
   .modal-content {
-    background-color: $tarjeta-fondo;
-    border: 1px solid $borde-suave;
-    box-shadow: 0 4px 12px $sombra-suave;
-    animation: fadeIn 0.5s ease-in-out;
-    border-radius: 1rem;
+    background-color: $tarjeta-fondo; // Fondo personalizado
+    border: 1px solid $borde-suave; // Borde sutil
+    box-shadow: 0 4px 12px $sombra-suave; // Sombra suave para profundidad
+    animation: fadeIn 0.5s ease-in-out; // Animación de aparición
+    border-radius: 1rem; // Bordes redondeados
   }
 
+  // Encabezado y pie del modal
   .modal-header, .modal-footer {
-    background: $fondo-footer;
-    color: $texto-footer;
-    border-bottom: 1px solid $tarjeta-borde;
+    background: $fondo-footer; // Fondo diferente para separar visualmente
+    color: $texto-footer; // Color del texto
+    border-bottom: 1px solid $tarjeta-borde; // Línea divisoria
   }
 
+  // Título del modal
   .modal-title {
-    color: $titulo-footer;
-    font-weight: bold;
+    color: $titulo-footer; // Color del texto del título
+    font-weight: bold; // Texto en negrita
   }
 
+  // Estilos para inputs dentro del modal
   .form-control {
-    border: 1px solid $borde-suave;
-    border-radius: 0.5rem;
-    box-shadow: none;
+    border: 1px solid $borde-suave; // Borde sutil
+    border-radius: 0.5rem; // Bordes suavemente redondeados
+    box-shadow: none; // Sin sombras por defecto
 
     &:focus {
-      border-color: $resaltado-financiero;
-      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3);
+      border-color: $resaltado-financiero; // Borde verde pastel al enfocar
+      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3); // Brillo al enfocar
     }
   }
 
+  // Botón principal (guardar/cambiar)
   .btn-primary {
-    background: $icono-navbar;
-    border: none;
-    font-weight: bold;
+    background: $icono-navbar; // Fondo con color especial definido en variables
+    border: none; // Sin bordes
+    font-weight: bold; // Texto en negrita
 
     &:hover {
-      background: lighten($icono-navbar, 10%);
+      background: lighten($icono-navbar, 10%); // Aclara el color al pasar el mouse
     }
   }
 
+  // Botón secundario (cancelar/cerrar)
   .btn-secondary {
-    background-color: $borde-suave;
-    border: none;
-    color: $texto-principal;
+    background-color: $borde-suave; // Fondo neutro
+    border: none; // Sin borde
+    color: $texto-principal; // Texto oscuro
 
     &:hover {
-      background-color: darken($borde-suave, 10%);
+      background-color: darken($borde-suave, 10%); // Oscurece el fondo al pasar el mouse
     }
   }
 }

@@ -1,21 +1,22 @@
+// Importamos las variables globales del sistema (colores, sombras, fuentes, etc.)
 @import '../../../../../styles/variables';
 
-// Contenedor general
+// Contenedor principal
 .container {
   padding: 2rem;
   background-color: $fondo-principal;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out; // Entrada suave
 }
 
 // Título principal
 h1 {
   color: $titulo-color;
   font-weight: bold;
-  text-shadow: 1px 1px 2px $sombra;
-  animation: fadeInDown 0.6s ease-in-out;
+  text-shadow: 1px 1px 2px $sombra; // Sombra para mejorar legibilidad
+  animation: fadeInDown 0.6s ease-in-out; // Entrada desde arriba
 }
 
-// Tabla
+// Tabla de visualización de datos (ej. ingresos)
 .table {
   background-color: $tarjeta-fondo;
   border: 1px solid $borde-suave;
@@ -24,6 +25,7 @@ h1 {
   overflow: hidden;
   animation: fadeInUp 0.7s ease-in-out;
 
+  // Cabecera de la tabla
   th {
     background-color: $fondo-navbar;
     color: $titulo-color;
@@ -31,18 +33,20 @@ h1 {
     text-align: center;
   }
 
+  // Celdas del cuerpo
   td {
     color: $texto-principal;
     vertical-align: middle;
   }
 
+  // Botón para editar (tipo advertencia)
   .btn-warning {
     background-color: $resaltado-financiero;
     border: none;
     color: white;
     font-weight: 500;
     transition: all 0.3s ease;
-    animation: bounceHover 1s infinite;
+    animation: bounceHover 1s infinite; // Rebote infinito (puede ajustarse)
 
     &:hover {
       background-color: lighten($resaltado-financiero, 10%);
@@ -51,7 +55,7 @@ h1 {
   }
 }
 
-// Modal
+// Modal de edición de ingresos
 #modalEditarIngreso {
   .modal-content {
     background-color: $tarjeta-fondo;
@@ -61,17 +65,21 @@ h1 {
     border-radius: 1rem;
   }
 
-  .modal-header, .modal-footer {
+  // Cabecera y pie del modal
+  .modal-header,
+  .modal-footer {
     background: $fondo-footer;
     color: $texto-footer;
     border-bottom: 1px solid $tarjeta-borde;
   }
 
+  // Título del modal
   .modal-title {
     color: $titulo-footer;
     font-weight: bold;
   }
 
+  // Campos del formulario
   .form-control {
     border: 1px solid $borde-suave;
     border-radius: 0.5rem;
@@ -79,10 +87,11 @@ h1 {
 
     &:focus {
       border-color: $resaltado-financiero;
-      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3);
+      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3); // Brillo suave al enfocar
     }
   }
 
+  // Botón para guardar cambios
   .btn-primary {
     background: $icono-navbar;
     border: none;
@@ -93,6 +102,7 @@ h1 {
     }
   }
 
+  // Botón para cerrar o cancelar
   .btn-secondary {
     background-color: $borde-suave;
     border: none;
