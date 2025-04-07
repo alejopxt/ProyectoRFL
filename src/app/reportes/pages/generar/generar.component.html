@@ -1,0 +1,65 @@
+<app-navbar-d></app-navbar-d>
+
+<div class="container">
+    <div class="menu">
+      <select>
+        <option>Home</option>
+        <option>Personal</option>
+        <option>Laboral</option>
+        <option>Ahorros</option>
+        <option>Gastos</option>
+      </select>
+    </div>
+
+    <h1>Generar Reporte</h1>
+
+    <div class="filters">
+      <div>
+        <label for="frecuencia">Frecuencia</label>
+        <select id="frecuencia">
+          <option>Mensual</option>
+          <option>Trimestre</option>
+          <option>Anual</option>
+          <option>Personal</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="tipo">Tipo de Reporte</label>
+        <select id="tipo">
+          <option>Resumen Personal General</option>
+          <option>Análisis de Ingresos y Gasto</option>
+          <option>Comparativa de Ahorro Pers</option>
+          <option>Progreso hacia metas perso</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="desde">Desde:</label>
+        <input type="date" id="desde" />
+      </div>
+
+      <div>
+        <label for="hasta">Hasta:</label>
+        <input type="date" id="hasta" />
+      </div>
+    </div>
+
+    <div class="graph">
+      [ Gráfico de Reporte ]
+    </div>
+
+    <div class="icon-bar">
+      <button title="Editar">✏️</button>
+      <button title="Eliminar">❌</button>
+      <button title="Descargar">⬇️</button>
+      <button title="Exportar a PDF">📄 PDF</button>
+    </div>
+
+    <div class="actions">
+      <button [routerLink]="['/reportes/consultar']">Generar Reporte</button>
+    </div>
+
+    <div class="success-message">✔ Guardado Éxito</div>
+  </div>
+
