@@ -1,141 +1,98 @@
-// Estilo principal de la barra de navegación
-.navbar {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  padding: 12px 20px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease-in-out;
-  border-radius: 10px;
+// Importa las variables de diseño (colores, sombras, etc.) desde un archivo externo.
+// Esto permite usar colores personalizados y mantener consistencia en todo el proyecto.
+@import '../../../../styles/variables';
 
-  // Cambio de color en hover y efecto sutil
-  &:hover {
-    background: rgba(252, 236, 213, 0.95);
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
-  }
+// Estilos para la barra de navegación principal (navbar).
+nav.navbar {
+  // Fondo con degradado definido en variables.scss.
+  background: $degradado-navbar;
+  // Sombra inferior para dar efecto de elevación.
+  box-shadow: 0 4px 8px $sombra-navbar;
+  // Línea inferior para separación visual.
+  border-bottom: 2px solid $borde-navbar;
+  // Animación de entrada desde arriba al cargarse.
+  animation: fadeInDown 0.6s ease-in-out;
 
-  // Estilos del logotipo
+  // Estilos del logo o título de la barra (lado izquierdo).
   .navbar-brand {
-    font-size: 22px;
+    // Color y estilo del texto del logo.
+    color: $titulo-navbar;
     font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
+    font-size: 1.25rem;
+    // Sombra al texto para hacerlo más legible sobre fondos.
+    text-shadow: 1px 1px 2px $sombra;
 
+    // Estilo del ícono dentro del título.
     i {
-      color: #B8E6C1;
-      font-size: 1.8rem;
-      transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+      color: $icono-navbar;
+      // Animación de brillo que se repite infinitamente.
+      animation: pulseGlow 2s infinite;
     }
 
+    // Cambio de color al pasar el mouse.
     &:hover {
-      transform: scale(1.05);
+      color: $hover-navbar;
+    }
+  }
+
+  // Estilos para los enlaces de navegación (como "Inicio", "Perfil", etc.).
+  .nav-link {
+    color: $texto-navbar; // Color por defecto del texto.
+    font-weight: 500;     // Grosor del texto.
+    // Transición suave de color al hacer hover.
+    transition: color 0.3s ease-in-out;
+
+    // Al pasar el mouse, cambia el color y subraya.
+    &:hover {
+      color: $hover-navbar;
+      text-decoration: underline;
+    }
+
+    // Íconos dentro de los enlaces.
+    i {
+      color: $icono-navbar;
+      // Transición suave para la transformación del ícono.
+      transition: transform 0.3s;
+    }
+
+    // Al hacer hover sobre el enlace, el ícono crece ligeramente.
+    &:hover i {
+      transform: scale(1.1);
+    }
+  }
+
+  // Menú desplegable (dropdown) que aparece al dar clic en opciones con submenús.
+  .dropdown-menu {
+    background-color: $fondo-navbar;     // Color de fondo del menú.
+    border: 1px solid $borde-navbar;     // Borde sutil.
+    box-shadow: 0 4px 6px $sombra-suave; // Sombra para efecto flotante.
+
+    // Cada opción dentro del menú desplegable.
+    .dropdown-item {
+      color: $texto-navbar;
+      font-weight: 400;
+
+      // Al hacer hover sobre una opción del dropdown.
+      &:hover {
+        background-color: lighten($tarjeta-fondo, 10%); // Color de fondo más claro.
+        color: $icono-navbar; // Texto del ítem cambia de color.
+      }
+
+      // Íconos dentro de los dropdown items.
       i {
-        color: #F7B4B4;
-        transform: rotate(-10deg);
+        color: $icono-navbar;
       }
     }
   }
 
-  // Estilos del menú de navegación
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        font-size: 16px;
-        font-weight: 500;
-        color: #444;
-        padding: 10px 15px;
-        border-radius: 8px;
-        transition: all 0.3s ease-in-out;
+  // Botón para mostrar/ocultar menú en pantallas pequeñas (responsive).
+  .navbar-toggler {
+    border-color: $borde-navbar; // Color del borde del botón.
 
-        i {
-          color: #B8E6C1;
-          margin-right: 5px;
-          transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
-
-        &:hover {
-          background: rgba(247, 215, 196, 0.8);
-          color: #333;
-          transform: translateY(-2px);
-
-          i {
-            color: #F7B4B4;
-            transform: rotate(-5deg);
-          }
-        }
-      }
-
-      // Estilos para dropdowns
-      .dropdown-menu {
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(8px);
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease-in-out;
-
-        .dropdown-item {
-          font-size: 15px;
-          color: #333;
-          padding: 10px 15px;
-          border-radius: 6px;
-          transition: all 0.3s ease-in-out;
-
-          i {
-            color: #B8E6C1;
-            margin-right: 8px;
-            transition: color 0.3s ease-in-out;
-          }
-
-          &:hover {
-            background: rgba(252, 236, 213, 0.8);
-            color: #000;
-
-            i {
-              color: #F7B4B4;
-            }
-          }
-        }
-      }
+    // Ícono hamburguesa personalizado en formato SVG.
+    .navbar-toggler-icon {
+      // Imagen codificada en base64 que forma las 3 líneas.
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23007BFF' viewBox='0 0 30 30'%3e%3cpath stroke='%23007BFF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
-  }
-
-  // Estilo de los iconos de la parte derecha (notificaciones y configuración)
-  .ms-auto {
-    .nav-item {
-      .nav-link {
-        font-size: 18px;
-        color: #444;
-        padding: 10px;
-        border-radius: 50%;
-        transition: all 0.3s ease-in-out;
-
-        i {
-          color: #F7B4B4;
-          transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        &:hover {
-          background: rgba(184, 230, 193, 0.7);
-          transform: scale(1.1);
-
-          i {
-            color: #FF6F61;
-            transform: rotate(15deg);
-          }
-        }
-      }
-    }
-  }
-}
-
-// Estilo del botón de colapso en móviles
-.navbar-toggler {
-  border: none;
-  outline: none;
-  background: transparent;
-
-  .navbar-toggler-icon {
-    filter: brightness(0) saturate(100%) invert(66%) sepia(21%) saturate(302%) hue-rotate(86deg) brightness(92%) contrast(89%);
   }
 }

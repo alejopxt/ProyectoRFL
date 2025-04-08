@@ -1,178 +1,112 @@
-// 🎨 Estilos generales del contenedor
+// Importamos variables globales (colores, sombras, etc.)
+@import '../../../../styles/variables';
+
+// Contenedor principal del login: ocupa toda la pantalla, centra el contenido
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #B8E6C1, #F7D7C4, #F7B4B4);
-  backdrop-filter: blur(8px);
-  padding: 1rem;
+  background-color: $fondo-principal; // Color de fondo definido en variables
+  min-height: 100vh; // Altura mínima: 100% del viewport
+  display: flex; // Usamos flexbox para centrar
+  justify-content: center; // Centrado horizontal
+  align-items: center; // Centrado vertical
+  padding: 2rem; // Espacio interno
 }
 
-// 🎨 Estilos del formulario
+// Formulario de login como una tarjeta
 .login-form {
-  background: rgba(255, 255, 255, 0.3);
-  // backdrop-filter: blur(15px);
-  border-radius: 16px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 380px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center;
-  animation: fadeIn 0.8s ease-in-out;
+  background-color: $tarjeta-fondo; // Fondo de la tarjeta
+  padding: 2.5rem; // Espaciado interno
+  border-radius: 2xl; // Bordes redondeados grandes
+  box-shadow: 0 8px 16px $sombra; // Sombra para profundidad
+  width: 100%; // Ancho completo del contenedor padre
+  max-width: 400px; // Máximo ancho para que no se expanda demasiado
+  animation: fadeInUp 0.8s ease-in-out; // Animación al aparecer
+}
+
+// Título centrado del formulario
+h2.text-center {
+  color: $titulo-color; // Color del título
+  margin-bottom: 2rem; // Separación inferior
+  font-weight: 600; // Peso de la fuente
+  // animation opcional para hacerlo más llamativo
+  // animation: pulseGlow 2s infinite;
+}
+
+// Etiquetas de los campos del formulario
+.form-label {
+  color: $texto-principal;
+  font-weight: 500;
+  margin-top: 1rem; // Separación superior
+}
+
+// Estilo del ícono dentro del input
+.input-group-text {
+  background-color: $fondo-principal; // Fondo similar al general
+  border: 1px solid $borde-suave;
+  color: $icono-navbar; // Color definido para íconos
+  animation: bounce 2s infinite; // Animación sutil
+}
+
+// Estilo del campo de entrada de texto
+.form-control {
+  border: 1px solid $borde-suave; // Borde sutil
+  border-left: none; // Sin borde en la izquierda (por ícono)
+  transition: all 0.3s ease; // Transición al enfocar
+
+  &:focus {
+    box-shadow: 0 0 5px $resaltado-financiero; // Brillo al enfocar
+    border-color: $resaltado-financiero; // Cambio de color de borde
+  }
+}
+
+// Botón de enviar (login)
+.btn-primary {
+  background: $degradado-navbar; // Fondo con degradado
+  border: none;
+  font-weight: bold;
+  animation: buttonHover 2s infinite; // Animación de atención
+  transition: background 0.3s ease;
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #5A189A;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1.5rem;
-  }
-
-  // 🎨 Etiquetas y estilos de los campos de entrada
-  .form-label {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #444;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
-
-    i {
-      font-size: 1.2rem;
-      color: #00C4FF;
-    }
-  }
-
-  // 🎨 Estilos de los input y su contenedor
-  .input-group {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    .input-group-text {
-      background: rgba(255, 255, 255, 0.5);
-      border: none;
-      color: #444;
-      font-size: 1.1rem;
-    }
-
-    .form-control {
-      background: transparent;
-      border: none;
-      color: #333;
-      font-size: 1rem;
-      padding: 0.8rem;
-      outline: none;
-      transition: background 0.3s ease-in-out;
-
-      &::placeholder {
-        color: rgba(0, 0, 0, 0.5);
-      }
-
-      &:focus {
-        background: rgba(255, 255, 255, 0.6);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      }
-    }
-  }
-
-  // 🎨 Mensajes de error y validación
-  .error-text,
-  .valid-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-top: 0.3rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-
-    i {
-      font-size: 1.2rem;
-    }
-  }
-
-  .error-text {
-    color: #D90429;
-  }
-
-  .valid-text {
-    color: #2AA60F;
-  }
-
-  // 🎨 Botón de inicio de sesión
-  .btn-primary {
-    background: linear-gradient(90deg, #FFD700, #00C4FF);
-    border: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.8rem;
-    border-radius: 12px;
-    margin-top: 1rem;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    }
-  }
-
-  // 🎨 Enlaces de recuperación y registro
-  .d-flex a {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-
-    &:hover {
-      color: #5A189A;
-      transform: scale(1.05);
-    }
+    background: $neon-efecto; // Efecto brillante al pasar el cursor
+    transform: scale(1.03); // Ligero agrandamiento
   }
 }
 
-// 🎨 Animaciones
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+// Texto para mostrar errores de validación
+.error-text {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+
+  i {
+    margin-right: 5px; // Espacio entre el ícono y el texto
   }
 }
 
-// 🎨 Media Queries para responsividad
-@media (max-width: 768px) {
-  .login-form {
-    padding: 1.5rem;
-    max-width: 90%;
-  }
+// Texto para mostrar validaciones correctas
+.valid-text {
+  color: $resaltado-financiero; // Color verde de éxito
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
 
-  .btn-primary {
-    font-size: 1rem;
+  i {
+    margin-right: 5px;
   }
+}
 
-  .d-flex {
-    flex-direction: column;
-    align-items: center;
+// Estilo de los enlaces (recuperar contraseña, etc.)
+a.text-decoration-none {
+  color: $titulo-navbar;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
 
-    a {
-      margin-top: 0.5rem;
-    }
+  &:hover {
+    color: $icono-navbar; // Cambio de color al pasar el cursor
+    text-decoration: underline; // Subrayado al pasar el cursor
   }
+}
+
+// Espaciado adicional para elementos con clase .d-flex
+.d-flex {
+  margin-top: 1.5rem;
 }

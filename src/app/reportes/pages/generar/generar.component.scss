@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  .menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+
+  .menu select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-size: 28px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .filters label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #444;
+  }
+
+  .filters select,
+  .filters input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+
+  .graph {
+    margin-top: 40px;
+    height: 240px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  .icon-bar {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .icon-bar button {
+    background: #eee;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .icon-bar button:hover {
+    background: #ddd;
+  }
+
+  .actions {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .actions button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .actions button:hover {
+    background-color: #0056b3;
+  }
+
+  .success-message {
+    margin-top: 20px;
+    text-align: center;
+    color: green;
+    font-weight: 600;
+  }

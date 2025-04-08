@@ -1,26 +1,30 @@
+// Importamos la interfaz Routes desde Angular para definir rutas de navegación
 import { Routes } from '@angular/router';
 
-// Definición de las rutas principales de la aplicación
+// Aquí definimos las rutas principales de la aplicación
 export const routes: Routes = [
-    // Ruta por defecto: si el usuario accede a la raíz ('/'), será redirigido a 'usuarios/inicio'
-    { path: '', redirectTo: 'usuarios/inicio', pathMatch: 'full' }, 
 
-    // Carga el módulo de usuarios de manera dinámica cuando el usuario accede a '/usuarios'
-    { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule) },
+  // Ruta por defecto: cuando se accede a la raíz (''), redirige a 'usuarios/inicio'
+  // 'pathMatch: full' asegura que solo se redirija si la URL es exactamente vacía
+  { path: '', redirectTo: 'usuarios/inicio', pathMatch: 'full' }, 
 
-    // Carga el módulo de Financiero Laboral de manera dinámica cuando el usuario accede a '/financiero-laboral'
-    { path: 'financiero-laboral', loadChildren: () => import('./financiero-laboral/financiero-laboral.module').then(m => m.FinancieroLaboralModule) },
+  // Ruta que carga de forma perezosa (lazy load) el módulo de 'usuarios'
+  // Esto mejora el rendimiento porque solo se carga este módulo cuando se accede a la ruta
+  { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule) },
 
-    // Carga el módulo de Financiero Personal cuando el usuario accede a '/financiero-personal'
-    { path: 'financiero-personal', loadChildren: () => import('./financiero-personal/financiero-personal.module').then(m => m.FinancieroPersonalModule) },
+  // Ruta para el módulo de Finanzas Laborales (también lazy loaded)
+  { path: 'financiero-laboral', loadChildren: () => import('./financiero-laboral/financiero-laboral.module').then(m => m.FinancieroLaboralModule) },
 
-    // Carga el módulo de Ahorros de manera dinámica cuando el usuario accede a '/ahorros'
-    { path: 'ahorros', loadChildren: () => import('./ahorros/ahorros.module').then(m => m.AhorrosModule) },
+  // Ruta para el módulo de Finanzas Personales
+  { path: 'financiero-personal', loadChildren: () => import('./financiero-personal/financiero-personal.module').then(m => m.FinancieroPersonalModule) },
 
-    // Carga el módulo de Reportes de manera dinámica cuando el usuario accede a '/reportes'
-    { path: 'reportes', loadChildren: () => import('./reportes/reportes.module').then(m => m.ReportesModule) },
+  // Ruta para el módulo de Ahorros
+  { path: 'ahorros', loadChildren: () => import('./ahorros/ahorros.module').then(m => m.AhorrosModule) },
 
-    // Ruta comodín: si el usuario accede a una ruta no definida, se le redirige a 'usuarios/inicio'
-    { path: '**', redirectTo: 'usuarios/inicio' } 
-    
+  // Ruta para el módulo de Reportes
+  { path: 'reportes', loadChildren: () => import('./reportes/reportes.module').then(m => m.ReportesModule) },
+
+  // Ruta comodín (**) para manejar rutas no existentes
+  // Redirige cualquier ruta desconocida a 'usuarios/inicio'
+  { path: '**', redirectTo: 'usuarios/inicio' } 
 ];

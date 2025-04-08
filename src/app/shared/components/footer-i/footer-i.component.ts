@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-footer-i', // Nombre con el que se usará este componente en la plantilla (ej: <app-footer-i></app-footer-i>)
-  standalone: false, // Indica que este componente no es independiente y forma parte de un módulo
+  selector: 'app-footer-i', 
+  standalone: false, 
   templateUrl: './footer-i.component.html',
   styleUrl: './footer-i.component.scss'
 })
 export class FooterIComponent {
-  // Variable para obtener el año actual dinámicamente
+  // Propiedad que obtiene el año actual automáticamente (por ejemplo: 2025)
+  // Se puede mostrar en el pie de página para que se actualice solo cada año
   currentYear: number = new Date().getFullYear();
 
-  // Lista de mensajes que se mostrarán en el footer, cada uno con un icono y un texto descriptivo
+  // Lista de mensajes motivacionales o informativos que se muestran en el footer
+  // Cada uno incluye un ícono de FontAwesome y un texto
   messages = [
     { icon: 'fas fa-chart-line', text: 'Transforma tu gestión financiera personal y laboral' },
     { icon: 'fas fa-piggy-bank', text: 'Planifica, ahorra y optimiza cada ingreso' },

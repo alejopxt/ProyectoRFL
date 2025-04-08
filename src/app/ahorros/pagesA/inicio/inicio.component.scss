@@ -1,0 +1,89 @@
+// Importamos las variables globales (colores, sombras, etc.)
+@import '../../../../styles/variables';
+
+// Contenedor general con animación de entrada
+.container-fluid {
+  animation: fadeIn 0.6s ease-in-out; // Animación al aparecer
+  padding: 2rem; // Espaciado interno
+
+  // Título principal
+  h1 {
+    color: $titulo-color; // Color del título
+    font-weight: bold; // Negrita
+    animation: fadeInDown 0.6s ease-in-out; // Entrada suave desde arriba
+  }
+
+  // Subtítulo o descripción
+  h6 {
+    color: $texto-principal; // Color del texto
+    font-style: italic; // Estilo cursiva
+    animation: fadeInDown 0.8s ease-in-out; // Animación más lenta que el h1
+  }
+}
+
+// Estilo para tarjetas
+.card {
+  background-color: $tarjeta-fondo; // Fondo de la tarjeta
+  border: 1px solid $borde-suave; // Borde sutil
+  border-radius: 1.5rem; // Bordes redondeados
+  box-shadow: 0 4px 12px $sombra; // Sombra para profundidad
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transiciones suaves
+  animation: fadeInUp 0.8s ease-in-out; // Animación desde abajo
+
+  // Efecto al pasar el mouse
+  &:hover {
+    transform: scale(1.03); // Ligeramente más grande
+    box-shadow: 0 6px 18px rgba(0, 168, 107, 0.3); // Sombra más intensa
+    animation: bounceHover 0.4s ease; // Animación rebote al hacer hover
+  }
+
+  // Encabezado de la tarjeta
+  .card-header {
+    background: $degradado-navbar; // Fondo con degradado
+    color: $titulo-navbar; // Color del texto del encabezado
+    font-weight: 600; // Seminegrita
+    border-bottom: 1px solid $borde-suave; // Línea divisoria inferior
+    border-top-left-radius: 1.5rem; // Redondeado izquierdo arriba
+    border-top-right-radius: 1.5rem; // Redondeado derecho arriba
+    animation: pulse 2s infinite; // Animación de pulso infinita
+  }
+
+  // Cuerpo de la tarjeta
+  .card-body {
+    display: flex;
+    flex-direction: column; // Organización vertical
+    align-items: center; // Centrado horizontal
+    justify-content: center; // Centrado vertical
+
+    // Íconos SVG (por ejemplo, íconos de FontAwesome)
+    svg {
+      color: $resaltado-financiero; // Color resaltado
+      transition: transform 0.4s ease; // Transición al interactuar
+      animation: pulseGlow 2s infinite; // Efecto de brillo pulsante
+    }
+
+    // Texto dentro de la tarjeta
+    p {
+      color: $texto-principal; // Color del texto
+      font-size: 0.9rem; // Tamaño de fuente pequeño
+    }
+
+    // Botones dentro de la tarjeta
+    button {
+      background-color: transparent; // Fondo transparente
+      border: 2px solid $resaltado-financiero; // Borde verde
+      color: $resaltado-financiero; // Texto en color verde
+      border-radius: 2rem; // Forma de píldora
+      transition: all 0.3s ease-in-out; // Transición general
+      font-weight: 600; // Seminegrita
+
+      // Hover del botón
+      &:hover {
+        background-color: $resaltado-financiero; // Fondo verde
+        color: white; // Texto en blanco
+        box-shadow: 0 4px 10px rgba(0, 168, 107, 0.4); // Sombra verde intensa
+        animation: buttonHover 0.4s ease-in-out; // Animación de entrada
+      }
+    }
+  }
+}

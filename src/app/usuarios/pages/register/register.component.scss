@@ -1,172 +1,114 @@
-// 🎨 Fondo general con degradado dinámico
+// Importa las variables globales de color y estilos
+@import '../../../../styles/variables';
+
+// Contenedor principal del formulario de registro
 .register-container {
-  display: flex;
+  display: flex; // Permite centrar el contenido horizontal y verticalmente
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #B8E6C1, #F7D7C4);
-  padding: 1.5rem;
-  animation: fadeInBackground 1s ease-in-out;
+  min-height: 100vh; // Ocupa toda la altura de la pantalla
+  background: $fondo-principal; // Color de fondo desde variables SCSS
+  animation: fadeIn 0.8s ease-in-out; // Animación suave de entrada
 }
 
-// 🎨 Efecto Glassmorphism en el formulario
+// Estilo para el formulario de registro
 .register-form {
-  background: rgba(255, 255, 255, 0.4);
-  // backdrop-filter: blur(15px);
-  border-radius: 18px;
-  padding: 2.5rem;
-  max-width: 600px;
+  background-color: $tarjeta-fondo; // Fondo suave para el formulario
+  border: 1px solid $borde-suave; // Borde fino y elegante
+  border-radius: 1.5rem; // Bordes redondeados
+  padding: 2rem; // Espaciado interno
+  box-shadow: 0 4px 10px $sombra; // Sombra suave
+  max-width: 800px;
   width: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  animation: slideIn 0.7s ease-in-out;
+  animation: fadeInUp 1s ease-in-out; // Animación de entrada desde abajo
+}
+
+// Estilo para el título del formulario (ej. "Crear cuenta")
+h2 {
+  color: $titulo-color; // Color del título
+  font-weight: 700; // Negrita
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 1s ease-in-out; // Animación de entrada desde arriba
+}
+
+// Etiquetas de los campos del formulario
+.form-label {
+  color: $texto-principal;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+// Grupo de campos de entrada
+.input-group {
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden; // Para que no se salgan los bordes redondeados
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); // Sombra muy suave para profundidad
+  
+  .input-group-text {
+    background-color: lighten($icono-navbar, 40%); // Fondo más claro para los íconos
+    border: none;
+    color: $icono-navbar; // Color de íconos
+  }
+
+  // Estilo para los inputs y selects
+  input,
+  select {
+    border: none;
+    border-left: 1px solid $borde-suave;
+    transition: box-shadow 0.3s ease;
+
+    // Estilo al enfocar el campo
+    &:focus {
+      box-shadow: 0 0 5px rgba(0,168,107,0.3); // Efecto verde suave
+      outline: none;
+    }
+  }
+}
+
+// Botón primario (ej. Registrar)
+.btn-primary {
+  background-color: $icono-navbar; // Color principal del botón
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  animation: buttonHover 2s infinite; // Animación cíclica
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #5A189A;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1.8rem;
-    animation: fadeInText 1s ease-in-out;
-  }
-
-  // 🎨 Estilos para los labels e iconos
-  .form-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #444;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-
-    i {
-      font-size: 1.3rem;
-      color: #00C4FF;
-    }
-  }
-
-  // 🎨 Contenedor de los inputs con efectos dinámicos
-  .input-group {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    .input-group-text {
-      background: rgba(255, 255, 255, 0.5);
-      border: none;
-      color: #444;
-      font-size: 1.2rem;
-    }
-
-    .form-control {
-      background: transparent;
-      border: none;
-      color: #333;
-      font-size: 1rem;
-      padding: 0.9rem;
-      outline: none;
-      transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-      &::placeholder {
-        color: rgba(0, 0, 0, 0.5);
-      }
-
-      &:focus {
-        background: rgba(255, 255, 255, 0.6);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      }
-    }
-  }
-
-  // 🎨 Estilos de los botones con animaciones
-  .btn-primary {
-    background: linear-gradient(90deg, #FFD700, #00C4FF);
-    border: none;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 0.9rem;
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    }
-  }
-
-  .btn-outline-secondary {
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 0.9rem;
-    border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    color: #333;
-    background: transparent;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, background 0.3s ease-in-out;
-
-    &:hover {
-      color: #5A189A;
-      transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.2);
-    }
-  }
-
-  // 🎨 Animaciones para mejorar la experiencia
-  @keyframes fadeInBackground {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeInText {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    background-color: $hover-navbar;
+    box-shadow: 0 0 10px rgba(0,168,107,0.3); // Sombra suave al pasar el mouse
+    transform: scale(1.05); // Efecto de agrandamiento
   }
 }
 
-// 🎨 Responsividad para mejorar la usabilidad en móviles
+// Botón secundario (ej. Cancelar, Volver)
+.btn-outline-secondary {
+  border: 2px solid $icono-navbar;
+  color: $icono-navbar;
+  background-color: transparent;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $hover-navbar;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,168,107,0.3);
+  }
+}
+
+// Adaptabilidad para pantallas pequeñas (responsive)
 @media (max-width: 768px) {
   .register-form {
-    padding: 1.8rem;
-    max-width: 90%;
+    padding: 1.5rem; // Reduce el padding en dispositivos móviles
   }
 
-  .btn-primary {
-    font-size: 1.1rem;
-  }
-
-  .btn-outline-secondary {
-    font-size: 1rem;
+  .input-group {
+    margin-bottom: 1rem; // Más espacio entre campos
   }
 }

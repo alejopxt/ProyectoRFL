@@ -1,94 +1,51 @@
-// Estilo del contenedor principal
+// Importamos las variables de estilos globales definidas en variables.scss
+@import '../../../../styles/variables';
+
+// Estilos generales para el contenedor principal
 .container {
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(184, 230, 193, 0.4), rgba(247, 183, 183, 0.4));
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: $fondo-principal; // Fondo claro y suave para mantener una apariencia limpia
+  border-radius: 1rem; // Bordes redondeados para un diseño moderno
+  padding: 2rem; // Espaciado interno para separar el contenido de los bordes
+  animation: fadeIn 0.6s ease-in-out; // Animación suave al aparecer
 }
 
-// Título principal del dashboard
+// Título del panel o sección del dashboard
 .dashboard-title {
-  font-size: 26px;
-  font-weight: bold;
-  color: #333;
-  padding: 12px 24px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #B8E6C1, #F7D7C4);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
-  transition: all 0.3s ease-in-out;
-
-  i {
-    color: #FF6F61;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
-
-    i {
-      transform: rotate(-10deg);
-    }
-  }
+  color: $titulo-color; // Color principal para títulos (resalta)
+  font-weight: bold; // Letra en negrita para destacar
+  text-shadow: 1px 1px 2px $sombra; // Sombra sutil para mejorar la visibilidad del texto
+  animation: fadeInDown 0.6s ease-out; // Animación descendente al cargar
 }
 
-// Tarjetas financieras con diseño más dinámico
+// Tarjeta que contiene información financiera o resumida
 .financial-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
+  background-color: $tarjeta-fondo; // Fondo blanco para enfoque limpio
+  border: 1px solid $borde-suave; // Borde con color suave, para separar visualmente
+  border-radius: 1rem; // Bordes redondeados para diseño amigable
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transiciones suaves al pasar el cursor
+  animation: fadeInUp 0.5s ease-in-out; // Animación ascendente al aparecer
 
+  // Efecto al pasar el cursor sobre la tarjeta
   &:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #FCECD5, #F7B4B4);
-
-    .icon-style {
-      transform: scale(1.1);
-      color: #FF6F61;
-    }
+    transform: scale(1.05); // Efecto de agrandamiento sutil
+    box-shadow: 0 0 15px $resaltado-financiero; // Resalta la tarjeta con sombra de color verde
+    animation: bounceHover 0.5s; // Animación de rebote al pasar el mouse
   }
 
-  // Efecto de sombra sutil en las tarjetas
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, #B8E6C1, #F7B4B4);
+  // Estilo para íconos dentro de la tarjeta
+  .icon-style {
+    color: $icono-navbar; // Color de íconos coherente con la navegación
+    animation: pulseGlow 2s infinite; // Efecto de brillo constante (animación repetitiva)
   }
 
+  // Título dentro de la tarjeta
   .card-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
+    color: $texto-principal; // Color de texto estándar para títulos
   }
 
+  // Texto informativo dentro de la tarjeta
   .card-text {
-    font-size: 14px;
-    color: #666;
+    color: $texto-principal; // Mismo color para mantener coherencia
+    font-size: 0.95rem; // Tamaño de texto ligeramente reducido
   }
-}
-
-// Estilo de los íconos dentro de las tarjetas
-.icon-style {
-  color: #B8E6C1;
-  font-size: 3rem;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-// Mensaje si no hay datos disponibles
-.text-center p {
-  color: #D72638;
-  font-weight: 500;
-  font-size: 16px;
 }

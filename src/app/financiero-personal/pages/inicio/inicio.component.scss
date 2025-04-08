@@ -1,0 +1,92 @@
+// Importamos las variables globales que contienen colores, sombras, fuentes, etc.
+// Esto permite mantener un diseño coherente en toda la aplicación
+@import '../../../../styles/variables';
+
+// Estilos para el contenedor principal tipo "fluid" que ocupa todo el ancho
+.container-fluid {
+  // Animación de aparición suave al cargar la página
+  animation: fadeIn 0.6s ease-in-out;
+  // Espaciado interno uniforme
+  padding: 2rem;
+
+  // Estilo del título principal
+  h1 {
+    color: $titulo-color;             // Color definido en variables.scss
+    font-weight: bold;                // Negrita
+    animation: fadeInDown 0.6s ease-in-out; // Animación de entrada desde arriba
+  }
+
+  // Subtítulo o descripción
+  h6 {
+    color: $texto-principal;          // Texto en color suave
+    font-style: italic;               // Texto en cursiva
+    animation: fadeInDown 0.8s ease-in-out; // Entrada más lenta que h1
+  }
+}
+
+// Tarjeta visual (card) que puede contener información o botones
+.card {
+  background-color: $tarjeta-fondo;  // Color de fondo suave
+  border: 1px solid $borde-suave;    // Borde sutil
+  border-radius: 1.5rem;             // Bordes redondeados
+  box-shadow: 0 4px 12px $sombra;    // Sombra que da efecto de elevación
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transición suave
+  animation: fadeInUp 0.8s ease-in-out; // Aparece desde abajo al cargar
+
+  // Efecto al pasar el mouse por encima de la tarjeta
+  &:hover {
+    transform: scale(1.03);                // Ligeramente más grande
+    box-shadow: 0 6px 18px rgba(0, 168, 107, 0.3); // Sombra más fuerte
+    animation: bounceHover 0.4s ease;      // Efecto sutil de rebote
+  }
+
+  // Cabecera de la tarjeta (título o ícono superior)
+  .card-header {
+    background: $degradado-navbar;         // Fondo con degradado definido
+    color: $titulo-navbar;                 // Texto destacado
+    font-weight: 600;                      // Negrita media
+    border-bottom: 1px solid $borde-suave; // Línea que separa del cuerpo
+    border-top-left-radius: 1.5rem;        // Bordes superiores redondeados
+    border-top-right-radius: 1.5rem;
+    animation: pulse 2s infinite;          // Efecto de pulso continuo
+  }
+
+  // Cuerpo de la tarjeta (donde va el contenido)
+  .card-body {
+    display: flex;                         // Activamos flexbox
+    flex-direction: column;               // Elementos en columna
+    align-items: center;                  // Centramos horizontalmente
+    justify-content: center;              // Centramos verticalmente
+
+    // Íconos SVG dentro de la tarjeta (como ilustraciones)
+    svg {
+      color: $resaltado-financiero;       // Color principal de atención
+      transition: transform 0.4s ease;    // Transición suave al interactuar
+      animation: pulseGlow 2s infinite;   // Brillo/pulso continuo
+    }
+
+    // Texto explicativo dentro de la tarjeta
+    p {
+      color: $texto-principal;            // Color suave y legible
+      font-size: 0.9rem;                  // Tamaño de fuente ligeramente reducido
+    }
+
+    // Botón de acción dentro de la tarjeta
+    button {
+      background-color: transparent;      // Fondo transparente
+      border: 2px solid $resaltado-financiero; // Borde con color llamativo
+      color: $resaltado-financiero;       // Mismo color en texto
+      border-radius: 2rem;                // Bordes muy redondeados
+      transition: all 0.3s ease-in-out;   // Transiciones suaves para todos los cambios
+      font-weight: 600;                   // Letra con peso medio
+
+      // Efecto al pasar el cursor por el botón
+      &:hover {
+        background-color: $resaltado-financiero; // Fondo se llena del color
+        color: white;                            // Texto se vuelve blanco
+        box-shadow: 0 4px 10px rgba(0, 168, 107, 0.4); // Sombra luminosa
+        animation: buttonHover 0.4s ease-in-out;       // Animación de botón
+      }
+    }
+  }
+}

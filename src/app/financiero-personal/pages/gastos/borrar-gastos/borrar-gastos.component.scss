@@ -1,0 +1,136 @@
+// Importamos las variables de colores, sombras, y otros estilos globales
+@import '../../../../../styles/variables';
+
+// Estilos para el contenedor principal
+.container {
+  animation: fadeIn 0.8s ease-in-out; // Animación de entrada suave
+  padding: 2rem; // Espaciado interno del contenedor
+
+  h1 {
+    color: $titulo-color; // Color definido en variables
+    font-weight: bold; // Texto en negrita
+    animation: fadeInDown 0.8s ease-in-out; // Animación descendente para el título
+  }
+}
+
+// Estilos de la tabla que contiene los datos
+.table {
+  border: 1px solid $borde-suave; // Borde sutil
+  box-shadow: 0 4px 8px $sombra; // Sombra para dar profundidad
+  border-radius: 12px; // Bordes redondeados
+  overflow: hidden; // Evita que el contenido sobresalga
+  background-color: $tarjeta-fondo; // Color de fondo desde variables
+  animation: fadeInUp 1s ease; // Animación de aparición desde abajo
+
+  thead {
+    background: $degradado-navbar; // Fondo degradado
+    color: white; // Texto blanco en encabezado
+
+    th {
+      padding: 1rem; // Espacio interno
+      font-weight: bold; // Texto en negrita
+      text-transform: uppercase; // Convierte el texto a mayúsculas
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.3s ease; // Transición suave al pasar el mouse
+
+      &:hover {
+        background-color: lighten($borde-suave, 25%); // Aclara el fondo al pasar el mouse
+      }
+
+      td {
+        padding: 0.8rem; // Espaciado interno en celdas
+        color: $texto-principal; // Color del texto
+        vertical-align: middle; // Centra el contenido verticalmente
+      }
+    }
+  }
+}
+
+// Botón de eliminar o acción peligrosa
+.btn-danger {
+  background-color: $resaltado-financiero; // Color definido para acciones importantes
+  border: none; // Sin borde
+  color: white; // Texto blanco
+  transition: all 0.3s ease; // Transición suave
+  box-shadow: 0 0 10px rgba(0, 168, 107, 0.2); // Sombra suave alrededor
+
+  &:hover {
+    background-color: darken($resaltado-financiero, 10%); // Oscurece al pasar el mouse
+    transform: scale(1.05); // Aumenta ligeramente el tamaño
+    animation: bounceHover 0.4s ease; // Efecto rebote (si está definido)
+  }
+}
+
+// Estilos para el menú de navegación lateral
+nav {
+  background-color: $fondo-navbar; // Fondo del navbar
+  border-right: 2px solid $borde-navbar; // Línea divisoria
+  box-shadow: 0 0 8px $sombra-navbar; // Sombra para dar profundidad
+
+  h4 {
+    color: $titulo-navbar; // Color del título
+    font-weight: bold; // Texto en negrita
+    animation: fadeInDown 1s ease-in-out; // Animación de entrada
+  }
+
+  .nav-link {
+    transition: all 0.3s ease; // Transición para el hover
+
+    &:hover {
+      background-color: $hover-navbar; // Fondo al pasar el mouse
+      border-radius: 10px; // Bordes redondeados
+    }
+  }
+
+  a {
+    color: $texto-navbar; // Color del texto del enlace
+
+    h5 {
+      font-weight: bold; // Subtítulo en negrita
+      color: $titulo-color; // Color de título del enlace
+    }
+
+    &:hover h5 {
+      color: $icono-navbar; // Cambia el color al pasar el mouse
+    }
+  }
+}
+
+// Estilos para el modal de confirmación al eliminar (id específico)
+#modalEliminarIngreso {
+  .modal-content {
+    border-radius: 15px; // Bordes redondeados del modal
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Sombra suave para destacar
+    animation: fadeIn 0.5s ease-in-out; // Animación de entrada
+  }
+
+  .modal-header {
+    background: $degradado-footer; // Fondo degradado del encabezado del modal
+    color: white; // Texto blanco
+    border-bottom: none; // Sin borde inferior
+    h5 {
+      font-weight: bold; // Título del modal en negrita
+    }
+  }
+
+  .modal-body {
+    color: $texto-principal; // Color de texto del cuerpo del modal
+    font-size: 1rem; // Tamaño del texto
+  }
+
+  .modal-footer {
+    border-top: none; // Sin borde superior
+
+    .btn {
+      border-radius: 10px; // Bordes redondeados para los botones
+    }
+
+    .btn-danger {
+      background-color: darken($resaltado-financiero, 5%); // Color de eliminar ligeramente más oscuro
+    }
+  }
+}

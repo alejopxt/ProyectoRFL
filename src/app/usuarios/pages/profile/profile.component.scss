@@ -1,106 +1,76 @@
-/* Fondo general con degradado dinámico */
-body {
-  background: linear-gradient(to right, #FCECD5, #F7D7C4, #B8E6C1);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
+// Importamos las variables de diseño (colores, sombras, etc.)
+@import '../../../../styles/variables';
+
+// Contenedor general con animación de entrada
+.container {
+  animation: fadeInUp 0.6s ease-out; // Entrada suave desde abajo
 }
 
-/* Tarjeta contenedora */
+// Tarjeta principal donde se muestra la información
 .card {
-  background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-  border-radius: 15px;
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
+  background-color: $tarjeta-fondo; // Color base para tarjetas
+  border: 1px solid $borde-suave; // Borde sutil
+  box-shadow: 0 4px 10px $sombra; // Sombra ligera para profundidad
+  border-radius: 1.5rem; // Bordes redondeados
 }
 
-/* Título centrado con degradado */
+// Título de la sección
 h2 {
-  background: linear-gradient(to right, #B8E6C1, #F7B4B4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $titulo-color;
   font-weight: bold;
+  animation: fadeInDown 0.5s ease-in; // Entrada desde arriba
 }
 
-/* Imagen de perfil con animaciones */
+// Imagen de perfil circular y animada
 .perfil-imagen {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 150px;
+  height: 150px;
+  object-fit: cover; // Recorte para mantener proporciones
+  border-radius: 50%; // Hace que sea completamente circular
+  border: 3px solid $icono-navbar; // Borde con color de íconos
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px $sombra;
 
   &:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); // Agranda al pasar el cursor
+    animation: pulseGlow 1s infinite; // Efecto brillante
+    cursor: pointer;
   }
 }
 
-/* Botón de guardar cambios */
-.btn-success {
-  background: linear-gradient(135deg, #B8E6C1, #5DCAA1);
-  border: none;
-  padding: 10px 25px;
-  font-size: 1.1rem;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: linear-gradient(135deg, #5DCAA1, #3B9E80);
-    transform: scale(1.05);
-  }
+// Estilo de las etiquetas de los campos (nombre, email, etc.)
+label {
+  color: $texto-principal;
+  font-weight: 500;
 }
 
-/* Inputs con bordes redondeados y efectos */
-.form-control {
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 12px;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.8);
+// Estilo compartido para inputs y selects
+input, select {
+  border: 1px solid $borde-suave;
+  border-radius: 0.5rem;
+  transition: border 0.3s ease;
 
   &:focus {
-    border-color: #B8E6C1;
-    box-shadow: 0 0 10px rgba(184, 230, 193, 0.5);
+    border-color: $resaltado-financiero; // Borde al enfocar
+    box-shadow: 0 0 5px rgba(0, 168, 107, 0.3); // Brillo sutil
   }
 }
 
-/* Íconos dentro de etiquetas */
-label i {
-  color: #5DCAA1;
-  margin-right: 5px;
-}
-
-/* Transición de los enlaces */
-a {
-  text-decoration: none;
-  color: #5DCAA1;
-  transition: color 0.3s ease;
+// Botón de enviar o guardar cambios
+button[type="submit"] {
+  background-color: $resaltado-financiero; // Verde principal
+  border: none;
+  border-radius: 2rem; // Forma de píldora
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 
   &:hover {
-    color: #3B9E80;
+    background-color: lighten($resaltado-financiero, 10%); // Aclara el color
+    transform: scale(1.05); // Efecto de presión
+    animation: bounceHover 0.6s; // Rebote suave
   }
-}
 
-/* Notificación flotante cuando se guarda */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  i {
+    margin-right: 8px; // Espacio entre ícono y texto
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.alert-success {
-  animation: fadeInUp 0.5s ease-in-out;
 }
