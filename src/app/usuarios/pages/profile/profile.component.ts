@@ -35,6 +35,14 @@ export class ProfileComponent {
       // Campo de número de documento, obligatorio y con validación
       documento: ['', [Validators.required, Validators.pattern(ExpresionesR.DOCUMENTO)]]
     });
+    // 🔽 Simulación de datos cargados
+    this.perfilForm.setValue({
+      nombres: 'Pepito',
+      correo: 'pepito@gmail.com',
+      tipoDocumento: 'CC',
+      documento: '1234567890'
+    });
+
   }
 
   // Función que se activa cuando el usuario carga una imagen de perfil
@@ -69,10 +77,23 @@ export class ProfileComponent {
       this.mensajeError = true;
       return;
     }
+    
+    // Simulamos una edición (por ejemplo: cambiaron el nombre y correo)
+    const datosEditados = this.perfilForm.value;
+    console.log('Perfil editado con éxito:');
+    console.log('Nombre:', datosEditados.nombres);
+    console.log('Correo:', datosEditados.correo);
+    console.log('Tipo de Documento:', datosEditados.tipoDocumento);
+    console.log('Documento:', datosEditados.documento);
 
     // Si es válido, muestra mensaje de éxito y guarda los datos en consola
     console.log(this.perfilForm.value);
     this.mensajeExito = true;
     this.mensajeError = false;
+
+    setTimeout(() => {
+      this.router.navigate(['/usuarios/dashboard']);
+    }, 2000);
   }
+
 }

@@ -96,3 +96,10 @@ nav.navbar {
     }
   }
 }
+
+.disabled-icon {
+  color: #c0c0c0 !important; /* Color gris claro */
+  pointer-events: none;       /* Bloquea interacción */
+  cursor: not-allowed;        /* Cursor cruzado */
+  opacity: 0.6;               /* Más sutil visualmente */
+}
