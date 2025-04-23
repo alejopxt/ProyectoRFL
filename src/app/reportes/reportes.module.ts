@@ -5,6 +5,7 @@ import { ReportesRoutingModule } from './reportes-routing.module';
 import { GenerarComponent } from './pages/generar/generar.component';
 import { SharedModule } from 'app/shared/shared.module';
 import { ConsultarComponent } from './pages/consultar/consultar.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ConsultarComponent } from './pages/consultar/consultar.component';
   imports: [
     CommonModule,
     ReportesRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     GenerarComponent,

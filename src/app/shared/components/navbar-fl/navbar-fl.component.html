@@ -7,44 +7,26 @@
         <h2 class="mt-3">Financiero Laboral</h2>
     </div>
     <br>
-    <a [routerLink]="['/usuarios/dashboard']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
+    <a [routerLink]="['/financiero-laboral/principal']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill me-2" viewBox="0 0 16 16">
             <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
         </svg>
         <h5 class="fw-bold ms-2">Regresar</h5> 
     </a>
     <hr>
-    <h4 class="text-center mt-2">Ingresos</h4>
-    <ul class="nav nav-pills flex-column mt-2">
-        <li class="nav-item">
-            <a [routerLink]="['/financiero-laboral/ingresos/agregar']" class="nav-link text-dark fw-semibold mt-2">Agregar</a>
-        </li>
-        <li class="nav-item">
-            <a [routerLink]="['/financiero-laboral/ingresos/editar']" class="nav-link text-dark fw-semibold mt-2">Editar</a>
-        </li>
-        <li class="nav-item">
-            <a [routerLink]="['/financiero-laboral/ingresos/eliminar']" class="nav-link text-dark fw-semibold mt-2">Borrar</a>
-        </li>
-    </ul>
+    <a [routerLink]="['/financiero-laboral/ingresos/agregar']" class="text-decoration-none">
+        <h4 class="text-center text-dark mt-4">Ingresos</h4>
+    </a><br>
     <hr>
-    <h4 class="text-center mt-2">Gastos</h4>
-    <ul class="nav nav-pills flex-column mt-2">
-        <li class="nav-item">
-            <a [routerLink]="['/financiero-laboral/gastos/agregar']" class="nav-link text-dark fw-semibold mt-2">Agregar</a>
-        </li>
-        <li class="nav-item">
-            <a [routerLink]="['/financiero-laboral/gastos/editar']" class="nav-link text-dark fw-semibold mt-2">Editar</a>
-        </li>
-        <li class="nav-item">
-            <a [routerLink]="['/financiero-laboral/gastos/eliminar']" class="nav-link text-dark fw-semibold mt-2">Borrar</a>
-        </li>
-    </ul>
+    <a [routerLink]="['/financiero-laboral/gastos/agregar']" class="text-decoration-none">
+        <h4 class="text-center text-dark mt-4">Gastos</h4>
+    </a><br>
     <hr>
     <a [routerLink]="['/ahorros/inicio']" class="text-decoration-none">
         <h4 class="text-center text-dark mt-4">Ahorros Laborales</h4>
     </a><br>
     <hr><br>
-    <a class="text-decoration-none">
+    <a [routerLink]="['/reportes/generar']" class="text-decoration-none">
         <h4 class="text-center text-dark">Reportes Laborales</h4>
     </a><br>
 </nav>

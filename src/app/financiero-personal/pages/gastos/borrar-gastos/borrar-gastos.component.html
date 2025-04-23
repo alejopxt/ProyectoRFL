@@ -12,23 +12,23 @@
                 </a>
                 <hr>
                 <h4 class="text-center">Gastos</h4>
-                <hr>
+                <!-- <hr> -->
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a [routerLink]="['/financiero-personal/gastos/agregar']" class="nav-link text-dark fw-semibold">Agregar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/financiero-personal/gastos/editar']" class="nav-link text-dark fw-semibold">Editar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/financiero-personal/gastos/borrar']" class="nav-link text-dark fw-semibold">Borrar</a>
-                    </li>
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/financiero-personal/gastos/agregar']" class="nav-link text-dark fw-semibold">Agregar</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/financiero-personal/gastos/editar']" class="nav-link text-dark fw-semibold">Editar</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/financiero-personal/gastos/borrar']" class="nav-link text-dark fw-semibold">Borrar</a> -->
+                    <!-- </li> -->
                     <hr><br>
                     <a [routerLink]="['/financiero-personal/ingresos']" class="text-decoration-none">
                         <h4 class="text-center text-dark">Ingresos</h4>
                     </a><br>
                     <hr><br>
-                    <a [routerLink]="['']" class="text-decoration-none">
+                    <a [routerLink]="['/ahorros/inicio']" class="text-decoration-none">
                         <h4 class="text-center text-dark">Ahorros Personales</h4>
                     </a><br>
                     <hr><br>
@@ -50,6 +50,7 @@
                     <table class="table table-light table-striped text-center">
                         <thead>
                             <tr>
+                                <th scope="col"></th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Monto</th>
@@ -57,11 +58,15 @@
                                 <th scope="col">Método de pago</th>
                                 <th scope="col">Periodicidad</th>
                                 <th scope="col">Fecha</th>
-                                <th scope="col">Borrar</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
                             <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>
                                 <td>Arriendo apartamento</td>
                                 <td>Vivienda</td>
                                 <td>$1.200.000 COP</td>
@@ -69,11 +74,13 @@
                                 <td>Transferencia bancaria</td>
                                 <td>Mensual</td>
                                 <td>31/01/2025</td>
-                                <td data-bs-toggle="modal" data-bs-target="#modalEliminarGasto">
-                                    <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button>
-                                </td>
                             </tr>
                             <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>       
                                 <td>Compra de mercado</td>
                                 <td>Alimentación</td>
                                 <td>$450,000 COP</td>
@@ -81,11 +88,13 @@
                                 <td>Tarjeta de crédito</td>
                                 <td>Quincenal</td>
                                 <td>15/01/2025</td>
-                                <td data-bs-toggle="modal" data-bs-target="#modalEliminarGasto">
-                                    <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button>
-                                </td>
                             </tr>
                             <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>       
                                 <td>Pasajes del bus</td>
                                 <td>Transporte</td>
                                 <td>$5,000 COP</td>
@@ -93,11 +102,13 @@
                                 <td>Efectivo - Tarjeta recargable</td>
                                 <td>Diario</td>
                                 <td>25/03/2025</td>
-                                <td data-bs-toggle="modal" data-bs-target="#modalEliminarGasto">
-                                    <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button>
-                                </td>
                             </tr>
                             <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>       
                                 <td>Pago de internet hogar</td>
                                 <td>Servicios públicos</td>
                                 <td>$120,000 COP</td>
@@ -105,11 +116,13 @@
                                 <td>Débito automático</td>
                                 <td>Mensual</td>
                                 <td>9/12/2024</td>
-                                <td data-bs-toggle="modal" data-bs-target="#modalEliminarGasto">
-                                    <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button>
-                                </td>
                             </tr>
                             <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>       
                                 <td>Cena con amigos</td>
                                 <td>Entretenimiento</td>
                                 <td>$80,000 COP</td>
@@ -117,12 +130,14 @@
                                 <td>Efectivo</td>
                                 <td>Ocasional</td>
                                 <td>15/01/2025</td>
-                                <td data-bs-toggle="modal" data-bs-target="#modalEliminarGasto">
-                                    <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="row align-items-center mt-3">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-danger rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalEliminarGasto">Eliminar</button>
+                    </div>
                 </div>
             </div> 
         </div>
@@ -138,15 +153,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>¿Estás seguro de que deseas borrar este Gasto?</p>
+                <p>¿Estás seguro de que deseas borrar los Gastos seleccionados?</p>
                 <p>Está acción no se puede deshacer.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Borrar</button>
+                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
             </div>
         </div>
     </div>
 </div>
 
-<p>borrar-gastos works!</p>
+<!-- <p>borrar-gastos works!</p> -->

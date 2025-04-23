@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-2">
             <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100 border-end text-center" style="width: 250px;">
-                <a [routerLink]="['/ahorros/inicio']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
+                <a [routerLink]="['/ahorros/ahorros']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill me-2" viewBox="0 0 16 16">
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                     </svg>
@@ -13,27 +13,27 @@
                 </a>
                 <hr>
                 <h4 class="text-center">Crear Objetivo de Ahorro</h4>
-                <hr>
+                <!-- <hr> -->
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a [routerLink]="['/ahorros/ahorros']" class="nav-link text-dark fw-semibold">Ahorros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/ahorros/editarobjetivos']" class="nav-link text-dark fw-semibold">Editar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/ahorros/eliminarobjetivos']" class="nav-link text-dark fw-semibold">Eliminar</a>
-                    </li>
-                    <hr><br>
-                    <a [routerLink]="['/financiero-personal/gastos']" class="text-decoration-none">
-                        <h4 class="text-center text-dark">Progresos</h4>
-                    </a><br>
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/ahorros/ahorros']" class="nav-link text-dark fw-semibold">Ahorros</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/ahorros/editarobjetivos']" class="nav-link text-dark fw-semibold">Editar</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/ahorros/eliminarobjetivos']" class="nav-link text-dark fw-semibold">Eliminar</a> -->
+                    <!-- </li> -->
+                    <!-- <hr><br> -->
+                    <!-- <a [routerLink]="['/financiero-personal/gastos']" class="text-decoration-none"> -->
+                        <!-- <h4 class="text-center text-dark">Progresos</h4> -->
+                    <!-- </a><br> -->
                     <hr><br>
                     <a [routerLink]="['/reportes/generar']" class="text-decoration-none">
                         <h4 class="text-center text-dark">Reporte de Ahorros</h4>
                     </a><br>
                     <hr><br>
-                    <a [routerLink]="['']" class="text-decoration-none">
+                    <a [routerLink]="['/reportes/generar']" class="text-decoration-none">
                         <h4 class="text-center text-dark">Historial de Reportes</h4>
                     </a><br>
                 </ul>
