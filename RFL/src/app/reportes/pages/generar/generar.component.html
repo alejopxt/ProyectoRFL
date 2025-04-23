@@ -1,0 +1,85 @@
+<app-navbar-d></app-navbar-d>
+
+<div class="generar-container">
+  <div class="container">
+    <div class="menu">
+      <select>
+        <option>Home</option>
+        <option>Personal</option>
+        <option>Laboral</option>
+        <option>Ahorros</option>
+        <option>Gastos</option>
+      </select>
+    </div>
+  
+    <h1>Generar Reporte</h1>
+  
+    <div class="filters">
+      <div>
+        <label for="frecuencia">Frecuencia</label>
+        <select [(ngModel)]="frecuencia" id="frecuencia">
+          <option>Mensual</option>
+          <option>Trimestre</option>
+          <option>Anual</option>
+          <option>Personal</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="tipo">Tipo de Reporte</label>
+        <select [(ngModel)]="tipo" id="tipo">
+          <option>Resumen Personal General</option>
+          <option>Análisis de Ingresos y Gasto</option>
+          <option>Comparativa de Ahorro Pers</option>
+          <option>Progreso hacia metas perso</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="desde">Desde:</label>
+        <input type="date" [(ngModel)]="desde" id="desde" />
+      </div>
+  
+      <div>
+        <label for="hasta">Hasta:</label>
+        <input type="date" [(ngModel)]="hasta" id="hasta" />
+      </div>
+    </div>
+  
+    <div class="icon-bar">
+      <button title="Editar">✏️</button>
+      <button title="Eliminar">❌</button>
+      <button title="Exportar a PDF" (click)="generarPDF()">📄 PDF</button>
+    </div>
+  
+    <div class="actions">
+      <button (click)="generarReporte()">Vista Previa</button>
+    </div>
+  
+    <div class="report-content" id="reporteGenerado" *ngIf="reporteVisible">
+      <h2>Reporte Generado</h2>
+      <p><strong>Frecuencia:</strong> {{ frecuencia }}</p>
+      <p><strong>Tipo de Reporte:</strong> {{ tipo }}</p>
+      <p><strong>Desde:</strong> {{ desde }}</p>
+      <p><strong>Hasta:</strong> {{ hasta }}</p>
+  
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Monto</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datos">
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.monto }}</td>
+            <td>{{ item.fecha }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</div>

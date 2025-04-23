@@ -1,0 +1,136 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    
+    <h2 class="text-center">Registro</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">
+          <i class="fas fa-user"></i> Nombres
+        </label>
+        <div class="input-group mb-1">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <input type="text" id="nombre" formControlName="nombre" class="form-control" placeholder="Ingrese su nombre">
+        </div>
+        @if (registerForm.get('nombre')?.touched) {
+          @if (registerForm.get('nombre')?.hasError('required')) {
+            <div class="alert alert-danger p-1">
+              <i class="fas fa-exclamation-circle"></i> El nombre es obligatorio.
+            </div>
+          } @else if (registerForm.get('nombre')?.hasError('pattern')) {
+            <div class="alert alert-warning p-1">
+              <i class="fas fa-exclamation-triangle"></i> Solo se permiten letras.
+            </div>
+          } @else {
+            <div class="alert alert-success p-1">
+              <i class="fas fa-check-circle"></i> ¡Nombre válido!
+            </div>
+          }
+        }
+
+        <label for="tipoDocumento" class="form-label mt-2">
+          <i class="fas fa-id-card"></i> Tipo de Documento
+        </label>
+        <div class="input-group mb-1">
+          <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+          <select id="tipoDocumento" formControlName="tipoDocumento" class="form-control">
+            <option value="" disabled selected>Seleccione</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="CE">Cédula de Extranjería</option>
+          </select>
+        </div>
+        @if (registerForm.get('tipoDocumento')?.touched && registerForm.get('tipoDocumento')?.hasError('required')) {
+          <div class="alert alert-danger p-1">
+            <i class="fas fa-exclamation-circle"></i> El tipo de documento es obligatorio.
+          </div>
+        }
+
+        <label for="password" class="form-label mt-2">
+          <i class="fas fa-lock"></i> Contraseña
+        </label>
+        <div class="input-group mb-1">
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+          <input type="password" id="password" formControlName="password" class="form-control" placeholder="Ingrese su contraseña">
+        </div>
+        @if (registerForm.get('password')?.touched) {
+          @if (registerForm.get('password')?.hasError('required')) {
+            <div class="alert alert-danger p-1">
+              <i class="fas fa-exclamation-circle"></i> La contraseña es obligatoria.
+            </div>
+          } @else if (registerForm.get('password')?.hasError('pattern')) {
+            <div class="alert alert-warning p-1">
+              <i class="fas fa-exclamation-triangle"></i> Mínimo 8 caracteres, solo letras y números.
+            </div>
+          } @else {
+            <div class="alert alert-success p-1">
+              <i class="fas fa-check-circle"></i> ¡Contraseña válida!
+            </div>
+          }
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label for="correo" class="form-label">
+          <i class="fas fa-envelope"></i> Correo
+        </label>
+        <div class="input-group mb-1">
+          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+          <input type="email" id="correo" formControlName="correo" class="form-control" placeholder="Ingrese su correo">
+        </div>
+        @if (registerForm.get('correo')?.touched) {
+          @if (registerForm.get('correo')?.hasError('required')) {
+            <div class="alert alert-danger p-1">
+              <i class="fas fa-exclamation-circle"></i> El correo es obligatorio.
+            </div>
+          } @else if (registerForm.get('correo')?.hasError('pattern')) {
+            <div class="alert alert-warning p-1">
+              <i class="fas fa-exclamation-triangle"></i> Solo se permiten correos hotmail, outlook o gmail.
+            </div>
+          } @else {
+            <div class="alert alert-success p-1">
+              <i class="fas fa-check-circle"></i> ¡Correo válido!
+            </div>
+          }
+        }
+
+        <label for="numeroDocumento" class="form-label mt-2">
+          <i class="fas fa-id-badge"></i> N° Documento
+        </label>
+        <div class="input-group mb-1">
+          <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+          <input type="text" id="numeroDocumento" formControlName="numeroDocumento" class="form-control" placeholder="Ingrese su documento">
+        </div>
+        @if (registerForm.get('numeroDocumento')?.touched) {
+          @if (registerForm.get('numeroDocumento')?.hasError('required')) {
+            <div class="alert alert-danger p-1">
+              <i class="fas fa-exclamation-circle"></i> El número de documento es obligatorio.
+            </div>
+          } @else if (registerForm.get('numeroDocumento')?.hasError('pattern')) {
+            <div class="alert alert-warning p-1">
+              <i class="fas fa-exclamation-triangle"></i> Solo se permiten números.
+            </div>
+          } @else {
+            <div class="alert alert-success p-1">
+              <i class="fas fa-check-circle"></i> ¡Documento válido!
+            </div>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-6 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+          Registrar
+        </button>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+        <a [routerLink]="['/usuarios/login']" class="btn btn-outline-secondary">
+          Iniciar Sesión
+        </a>
+      </div>
+    </div>
+
+  </form>
+</div>

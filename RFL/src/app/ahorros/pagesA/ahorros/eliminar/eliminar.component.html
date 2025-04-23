@@ -1,0 +1,129 @@
+<app-navbar-d></app-navbar-d>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100 border-end text-center" style="width: 250px;">
+                <a [routerLink]="['/ahorros/ahorros']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill me-2" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                    <h5 class="fw-bold ms-2">Regresar</h5>
+                </a>
+                <hr>
+                <h4 class="text-center">Ahorros</h4>
+                <!-- <hr> -->
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/ahorros/crearobjetivos']" class="nav-link text-dark fw-semibold">Crear Objetivos de Ahorro</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/ahorros/editarobjetivos']" class="nav-link text-dark fw-semibold">Editar</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/ahorros/eliminarobjetivos']" class="nav-link text-dark fw-semibold">Eliminar</a> -->
+                    <!-- </li> -->
+                    <hr><br>
+                    <a [routerLink]="['/financiero-personal/gastos']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Progresos</h4>
+                    </a><br>
+                    <hr><br>
+                    <a [routerLink]="['/reportes/generar']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Reporte de Ahorros</h4>
+                    </a><br>
+                    <hr><br>
+                    <a [routerLink]="['/reportes/generar']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Historial de Reportes</h4>
+                    </a><br>
+                </ul>
+
+            </nav>
+        </div>
+        
+        <div class="col-10">
+            <div class="container">
+                <div class="row align-items-center mt-3">
+                    <div class="col">
+                        <h1>Ahorros</h1>
+                    </div>
+                    <div class="col d-flex justify-content-end gap-2">
+                        <button [routerLink]="['/ahorros/crearobjetivos']" type="button" class="btn btn-light rounded-pill px-3">Crear Objetivo de ahorro</button>
+                        <button [routerLink]="['/ahorros/editarobjetivos']" type="button" class="btn btn-light rounded-pill px-3">Editar</button>
+                        <button style="background-color: red;" [routerLink]="['/ahorros/eliminarobjetivos']" type="button" class="btn btn-light rounded-pill px-3">Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive mt-3">
+                    <table class="table table-light table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Monto Final</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>   
+                                <td>Ahorro para Camioneta</td>
+                                <td>$47,250,000 COP</td>
+                                <td>Comprar Camioneta ultimo modelo</td>
+                                <td>24/12/2025</td>
+                                <td>$135.000.000</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarobjetivos">
+                                    <button type="button" class="btn btn-danger rounded-pill px-3">Eliminar</button>
+                                </td> -->
+                            </tr>
+                            
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>   
+                                <td>Primera cuota para apartamento</td>
+                                <td>$8,500,000 COP</td>
+                                <td>Comprar Apartamento 2000m2</td>
+                                <td>31/03/2023</td>
+                                <td>$288,500,000</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarobjetivos">
+                                    <button type="button" class="btn btn-danger rounded-pill px-3">Eliminar</button>
+                                </td> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row align-items-center mt-3">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-danger rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalEliminarobjetivos">Eliminar</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+
+
+<!-- Modal para Eliminar Ingresos -->
+<div class="modal fade" id="modalEliminarobjetivos" tabindex="-1" aria-labelledby="modalEliminarobjetivosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEliminarobjetivosLabel">Borrar Ingreso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar los objetivos seleccionados?</p>
+                <p>Está acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

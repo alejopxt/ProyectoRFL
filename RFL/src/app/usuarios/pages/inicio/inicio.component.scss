@@ -1,0 +1,128 @@
+// Importamos variables globales para mantener consistencia de colores y estilos
+@import '../../../../styles/variables';
+
+// Contenedor principal de la pantalla de inicio
+.inicio-container {
+  display: flex; // Contenedor flexible
+  flex-direction: column; // Alinea los elementos en columna
+  align-items: center; // Centra horizontalmente los elementos hijos
+  text-align: center; // Centra el texto
+  padding: 50px 20px; // Espaciado interno
+  background: $fondo-principal; // Color de fondo definido en variables
+  min-height: 100vh; // Ocupa toda la altura visible de la pantalla
+  opacity: 0; // Comienza invisible para aplicar animación
+  animation: fadeIn 1s ease-in-out forwards; // Animación de aparición
+
+  // Sección del texto principal o "hero"
+  .hero-text {
+    max-width: 800px; // Ancho máximo del texto
+    margin-bottom: 40px; // Espacio inferior
+    color: $texto-principal; // Color de texto desde variables
+    animation: fadeIn 1s ease-in-out 0.5s forwards; // Animación de entrada con retraso
+
+    h1 {
+      font-size: 2.5rem; // Tamaño grande del título
+      font-weight: bold; // Texto en negrita
+      color: $titulo-color; // Color del título
+      overflow: hidden; // Oculta el texto que sobresale
+      border-right: 3px solid $titulo-color; // Línea que simula el cursor
+      white-space: nowrap; // Evita que el texto se divida en varias líneas
+      width: 0; // Ancho 0 para animar escritura
+      display: inline-block;
+      animation: 
+        typeWriter 2s steps(30, end) forwards, // Efecto máquina de escribir
+        blink 0.75s step-end infinite; // Cursor parpadeante
+    }
+
+    p {
+      font-size: 1.2rem; // Tamaño del párrafo
+      color: darken($texto-principal, 10%); // Color ligeramente más oscuro
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: darken($texto-principal, 20%); // Aún más oscuro que el texto normal
+    }
+  }
+}
+
+// Tarjetas que presentan características o funciones principales
+.feature-card {
+  background: $tarjeta-fondo; // Fondo claro o pastel
+  padding: 20px; // Espaciado interno
+  border-radius: 12px; // Bordes redondeados
+  box-shadow: 0px 4px 10px $sombra; // Sombra suave
+  text-align: center;
+  transition: all 0.3s ease-in-out; // Transición suave para efectos hover
+  border: 2px solid $borde-suave; // Borde decorativo
+  min-height: 200px;
+  opacity: 0;
+  transform: translateY(20px); // Aparece desde abajo
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.3s; // Retraso para animar después de cargar
+
+  // Efecto al pasar el cursor (hover)
+  &:hover {
+    transform: translateY(-5px); // Se eleva un poco
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); // Sombra más intensa
+    animation: bounce 0.5s ease-in-out; // Animación tipo rebote
+  }
+
+  // Icono decorativo de la tarjeta
+  .icon {
+    font-size: 2.5rem;
+    color: $resaltado-financiero; // Color llamativo
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite ease-in-out; // Efecto de latido
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $titulo-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: darken($texto-principal, 20%);
+  }
+}
+
+// Estilo para el botón destacado (llamada a la acción)
+.btn-financiero {
+  background: $resaltado-financiero; // Color principal del botón
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  // Efecto al pasar el cursor
+  &:hover {
+    background: darken($resaltado-financiero, 10%); // Más oscuro al pasar el mouse
+    box-shadow: 0px 0px 10px rgba(0, 168, 107, 0.7); // Sombra brillante
+  }
+}
+
+// Mejora la accesibilidad: solo aplica animaciones si el usuario no las ha desactivado
+@media (prefers-reduced-motion: no-preference) {
+  [data-scroll] {
+    opacity: 0; // Oculto al inicio
+    transform: translateY(50px); // Comienza más abajo
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; // Transiciones suaves
+  }
+
+  // Clase para activar visibilidad al hacer scroll
+  [data-scroll].visible {
+    opacity: 1;
+    transform: translateY(0); // Vuelve a su lugar original
+  }
+}
+
+// Estilos adaptativos para pantallas pequeñas
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem; // Título más pequeño en pantallas pequeñas
+  }
+}

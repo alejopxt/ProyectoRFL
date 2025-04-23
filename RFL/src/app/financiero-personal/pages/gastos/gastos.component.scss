@@ -1,0 +1,106 @@
+// Importamos las variables globales de estilos
+@import '../../../../styles/variables';
+
+// Contenedor principal de la vista
+.container {
+  background-color: $fondo-principal; // Fondo general
+  padding: 2rem; // Espaciado interno
+  border-radius: 1rem; // Bordes redondeados
+  box-shadow: 0 4px 8px $sombra; // Sombra para profundidad
+  animation: fadeIn 0.6s ease-in-out; // Animación al cargar
+}
+
+// Estilo para el título principal
+h1 {
+  color: $titulo-color; // Color definido en variables
+  font-weight: bold; // Negrita
+  animation: fadeInDown 0.5s ease-in-out; // Animación descendente
+}
+
+// Estilo para los botones
+button {
+  background: $degradado-navbar; // Degradado desde variables
+  color: white; // Texto blanco
+  font-weight: 500; // Seminegrita
+  border: none; // Sin borde
+  transition: transform 0.3s ease; // Suavidad en transformación
+  box-shadow: 0 4px 6px $sombra; // Sombra al botón
+
+  // Efecto al pasar el cursor
+  &:hover {
+    background: $hover-navbar; // Color diferente al pasar el mouse
+    transform: scale(1.05); // Efecto de crecimiento
+  }
+}
+
+// Estilos para la tabla
+.table {
+  border-radius: 1rem; // Bordes redondeados
+  overflow: hidden; // Oculta desbordamientos
+  background-color: $tarjeta-fondo; // Fondo claro
+  box-shadow: 0 4px 6px $sombra-suave; // Sombra suave
+  animation: fadeInUp 0.5s ease-in-out; // Animación desde abajo
+
+  // Encabezado de la tabla
+  th {
+    background-color: $borde-suave; // Color de fondo del encabezado
+    color: $titulo-color; // Color del texto
+    font-weight: 600; // Seminegrita
+  }
+
+  // Celdas de la tabla
+  td {
+    color: $texto-principal; // Texto estándar
+  }
+}
+
+// Estilos para interruptores tipo switch
+.form-switch {
+  .form-check-input {
+    background-color: $resaltado-financiero; // Color del switch
+    border-color: $resaltado-financiero; // Borde igual al fondo
+    transition: all 0.3s ease-in-out; // Suavidad en el cambio
+    box-shadow: 0 0 5px rgba(0, 168, 107, 0.5); // Brillo al switch
+
+    // Cuando está activado
+    &:checked {
+      background-color: $resaltado-financiero;
+    }
+
+    // Cuando está enfocado (accesibilidad)
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(0, 168, 107, 0.25); // Sombra envolvente
+    }
+  }
+}
+
+// Título dentro del navbar
+nav h4 {
+  color: $titulo-color; // Color del texto
+  font-weight: 600; // Negrita media
+}
+
+// Estilo general para la barra de navegación
+nav {
+  background: $fondo-navbar; // Fondo del navbar
+  border-right: 1px solid $borde-navbar; // Línea divisoria derecha
+  box-shadow: 2px 0 6px $sombra; // Sombra vertical a la derecha
+}
+
+// Enlaces del navbar
+.nav-link {
+  color: $texto-navbar !important; // Color por defecto
+
+  // Al pasar el cursor
+  &:hover {
+    color: $icono-navbar !important; // Color destacado
+    background-color: lighten($fondo-navbar, 5%); // Aclarado del fondo
+    transform: scale(1.02); // Ligero aumento
+    transition: all 0.2s ease-in-out; // Suavidad
+  }
+}
+
+// Línea divisoria (horizontal rule)
+hr {
+  border-color: $borde-suave; // Color sutil
+}

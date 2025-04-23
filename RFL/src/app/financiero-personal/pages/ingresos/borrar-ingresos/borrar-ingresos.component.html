@@ -1,0 +1,182 @@
+<app-navbar-d></app-navbar-d>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100 border-end text-center" style="width: 250px;">
+                <a [routerLink]="['/financiero-personal/ingresos']" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill me-2" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                    <h5 class="fw-bold ms-2">Regresar</h5>
+                </a>
+                <hr>
+                <h4 class="text-center">Ingresos</h4>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/financiero-personal/ingresos/agregar']" class="nav-link text-dark fw-semibold">Agregar</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/financiero-personal/ingresos/editar']" class="nav-link text-dark fw-semibold">Editar</a> -->
+                    <!-- </li> -->
+                    <!-- <!-- <li class="nav-item"> -->
+                        <!-- <a [routerLink]="['/financiero-personal/ingresos/borrar']" class="nav-link text-dark fw-semibold">Borrar</a> -->
+                    <!-- </li> -->
+                    <hr><br>
+                    <a [routerLink]="['/financiero-personal/gastos']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Gastos</h4>
+                    </a><br>
+                    <hr><br>
+                    <a [routerLink]="['/ahorros/inicio']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Ahorros Personales</h4>
+                    </a><br>
+                    <hr><br>
+                    <a [routerLink]="['/reportes/generar']" class="text-decoration-none">
+                        <h4 class="text-center text-dark">Reportes Personales</h4>
+                    </a><br>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="col-10">
+            <div class="container">
+                <div class="row align-items-center mt-3">
+                    <div class="col">
+                        <h1 class="text-center">Borrar Ingresos</h1>
+                    </div>
+                </div>
+
+                <div class="table-responsive mt-3">
+                    <table class="table table-light table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th> 
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Método de pago</th>
+                                <th scope="col">Periodicidad</th>
+                                <th scope="col">Fecha</th>
+                                <!-- <th scope="col">Borrar</th> -->
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>                                                               
+                                <td>Salario mensual</td>
+                                <td>Ingreso Laboral</td>
+                                <td>$2,500,000 COP</td>
+                                <td>Pago mensual por el trabajo.</td>
+                                <td>Transferencia bancaria</td>
+                                <td>Mensual</td>
+                                <td>31/01/2025</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarIngreso"> -->
+                                    <!-- <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button> -->
+                                <!-- </td> -->
+                            </tr>
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>                                                               
+                                <td>Ingresos por Freelance (Programación)</td>
+                                <td>Ingreso Autónomo</td>
+                                <td>$800,000 COP</td>
+                                <td>Pago por trabajos independientes realizados como programador</td>
+                                <td>PayPal</td>
+                                <td>Quincenal</td>
+                                <td>15/02/2025</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarIngreso"> -->
+                                    <!-- <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button> -->
+                                <!-- </td> -->
+                            </tr>
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>                                                            
+                                <td>Renta de propiedad</td>
+                                <td>Ingreso Pasivo</td>
+                                <td>$1,200,000 COP</td>
+                                <td>Ingreso proveniente del alquiler de un apartamento.</td>
+                                <td>Efectivo</td>
+                                <td>Mensual</td>
+                                <td>1/03/2025</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarIngreso"> -->
+                                    <!-- <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button> -->
+                                <!-- </td> -->
+                            </tr>
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>                                                                
+                                <td>Ingresos por ventas en línea</td>
+                                <td>Ingreso Autónomo</td>
+                                <td>$500,000 COP</td>
+                                <td>Dinero generado por la venta de productos artesanales.</td>
+                                <td>MercadoPago</td>
+                                <td>Únicamente</td>
+                                <td>9/12/2024</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarIngreso"> -->
+                                    <!-- <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button> -->
+                                <!-- </td> -->
+                            </tr>
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="form-check d-flex justify-content-end">
+                                        <input class="form-check-input" type="checkbox" id="checkDefault">
+                                    </div>
+                                </td>                                                               
+                                <td>Intereses de inversión (CDT)</td>
+                                <td>Ingreso Pasivo</td>
+                                <td>$300,000 COP</td>
+                                <td>Ganancia obtenida por la inversión en un CDT en un banco.</td>
+                                <td>Transferencia bancaria</td>
+                                <td>Trimestral</td>
+                                <td>15/01/2025</td>
+                                <!-- <td data-bs-toggle="modal" data-bs-target="#modalEliminarIngreso"> -->
+                                    <!-- <button type="button" class="btn btn-danger rounded-pill px-3">Borrar</button> -->
+                                <!-- </td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row align-items-center mt-3">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-danger rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalEliminarIngreso">Eliminar</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Eliminar Ingresos -->
+<div class="modal fade" id="modalEliminarIngreso" tabindex="-1" aria-labelledby="modalEliminarIngresoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEliminarIngresoLabel">Borrar Ingreso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas borrar los ingresos seleccionados?</p>
+                <p>Está acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <p>borrar-ingresos works!</p> -->

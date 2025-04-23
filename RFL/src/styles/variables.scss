@@ -1,0 +1,117 @@
+// Variables de colores principales para usar en todo el sitio
+$fondo-principal: #F0FAFF; // Fondo general claro y suave
+$tarjeta-fondo: #FFFFFF; // Fondo blanco para tarjetas o contenedores
+$titulo-color: #0077B6; // Color azul fuerte para títulos
+$texto-principal: #333333; // Color oscuro para texto legible
+$resaltado-financiero: #00A86B; // Verde usado para resaltar temas financieros
+$borde-suave: #D1E8FF; // Bordes con color suave para diseño limpio
+$sombra: rgba(0, 0, 0, 0.1); // Sombra suave para dar profundidad
+
+// Variables específicas para el navbar (barra de navegación)
+$fondo-navbar: #F0FAFF; // Mismo fondo claro que el principal
+$texto-navbar: #333333; // Texto oscuro para buena legibilidad
+$titulo-navbar: #0077B6; // Título en azul para destacar
+$icono-navbar: #00A86B; // Verde para iconos del navbar
+$borde-navbar: #D1E8FF; // Borde sutil del navbar
+$sombra-navbar: rgba(0, 0, 0, 0.1); // Sombra para dar relieve
+$hover-navbar: lighten($icono-navbar, 20%); // Efecto hover más claro sobre iconos
+$degradado-navbar: linear-gradient(135deg, #5FD0D5 0%, #81D4FA 100%); // Fondo con degradado azul claro
+$neon-efecto: linear-gradient(135deg, #33C3FF 0%, #C5FAD5 100%); // Degradado con efecto tipo neón
+
+// Variables para el pie de página (footer)
+$fondo-footer: #F0FAFF; // Fondo claro para mantener consistencia
+$texto-footer: #333333; // Texto oscuro en el footer
+$titulo-footer: #0077B6; // Azul para los títulos del footer
+$icono-footer: #00A86B; // Verde para los iconos del footer
+$tarjeta-borde: #C5FAD5; // Bordes de tarjetas en el footer
+$sombra-suave: rgba(0, 0, 0, 0.1); // Sombra ligera
+$degradado-footer: linear-gradient(135deg, #5FD0D5 0%, #81D4FA 100%); // Degradado suave azul para el fondo
+$neon-sutil: linear-gradient(135deg, #33C3FF 0%, #C5FAD5 100%); // Efecto sutil de luz para el footer
+
+// Animaciones que puedes aplicar a elementos para que tengan movimiento
+
+@keyframes fadeIn {
+  // Hace que el elemento aparezca suavemente desde abajo
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  // Hace que el elemento baje desde arriba al aparecer
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  // Hace que el elemento suba desde abajo al aparecer
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  // Rebote vertical pequeño, útil para iconos o botones
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  // Pulso suave que agranda ligeramente el elemento
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes glow {
+  // Efecto de resplandor intermitente, como si el elemento brillara
+  0% { box-shadow: 0px 0px 5px transparent; }
+  50% { box-shadow: 0px 0px 10px rgba(95, 208, 213, 0.6); }
+  100% { box-shadow: 0px 0px 5px transparent; }
+}
+
+@keyframes rotateIcon {
+  // Rota un icono 360 grados, útil para animaciones de carga
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateLogo {
+  // Igual que rotateIcon, pensado para animar el logo
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes buttonHover {
+  // Efecto de crecimiento ligero al pasar el cursor sobre un botón
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes typeWriter {
+  // Efecto de máquina de escribir (el texto aparece como si se escribiera)
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  // Parpadeo de un borde, útil para cursores de texto animados
+  50% { border-color: transparent; }
+}
+
+@keyframes bounceHover {
+  // Efecto rebote más elaborado para botones o iconos al hacer hover
+  0% { transform: scale(1); }
+  30% { transform: scale(1.05); }
+  50% { transform: scale(0.98); }
+  70% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+  // Combinación de pulso y resplandor, útil para destacar botones importantes
+  0%, 100% {
+    box-shadow: 0 0 0px transparent;
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 168, 107, 0.5);
+  }
+}

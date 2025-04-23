@@ -1,0 +1,39 @@
+<!-- Barra de navegación simple, con sombra y expandible para dispositivos móviles -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+  
+  <!-- Marca del sistema (logo e iniciales de la aplicación) -->
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <i class="fas fa-coins fa-lg me-2 logo-icon"></i> RFL
+  </a>
+
+  <!-- Botón hamburguesa que aparece en pantallas pequeñas -->
+  <!-- Usa binding Angular (click)="toggleMenu()" para manejar el menú manualmente -->
+  <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Contenedor de enlaces colapsable -->
+  <!-- ngClass activa la clase 'show' para desplegar el menú si isMenuOpen es true -->
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }" id="navbarNav">
+    
+    <!-- Lista de enlaces alineados a la derecha (ms-auto) -->
+    <ul class="navbar-nav ms-auto">
+      
+      <!-- Botón para ir al login -->
+      <li class="nav-item">
+        <a class="nav-link btn-login" [routerLink]="['/usuarios/login']">
+          <i class="fas fa-sign-in-alt me-1"></i> Iniciar sesión
+        </a>
+      </li>
+      
+      <!-- Botón para ir al registro (con un poco de margen izquierdo) -->
+      <li class="nav-item ms-2">
+        <a class="nav-link btn-register" [routerLink]="['/usuarios/registro']">
+          <i class="fas fa-user-plus me-1"></i> Registrarse
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+</nav>

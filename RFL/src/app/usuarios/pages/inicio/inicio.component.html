@@ -1,0 +1,55 @@
+<!-- Componente de barra de navegación del inicio (puede incluir logo, menú, etc.). -->
+<app-navbar-i></app-navbar-i>
+
+<!-- Contenedor principal de la pantalla de inicio -->
+<div class="inicio-container">
+
+  <!-- Sección de presentación principal (hero) con texto destacado. -->
+  <section class="hero">
+    <div class="hero-text">
+      <!-- Título principal de la plataforma. -->
+      <h1>Optimiza tu Desempeño Financiero</h1>
+
+      <!-- Subtítulo que plantea una pregunta atractiva al usuario. -->
+      <p>¿Quieres mejorar tu control financiero, tanto personal como laboral?</p>
+
+      <!-- Texto explicativo con clase 'lead' para destacar estilo. -->
+      <p class="lead">
+        Nuestra plataforma te ayuda a gestionar ingresos, gastos y ahorros de manera eficiente, 
+        con reportes detallados y estrategias de ahorro personalizadas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección de características o funcionalidades destacadas de la app. -->
+  <section class="features">
+    <div class="container">
+      <div class="row">
+
+        <!-- Bucle que recorre todas las características del array 'features'. 
+             Muestra una tarjeta por cada elemento. -->
+        @for (feature of features; track feature.title) {
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <!-- Ícono de la característica (se renderiza dinámicamente). -->
+              <div class="icon"><i class="{{ feature.icon }}"></i></div>
+
+              <!-- Título y descripción de cada característica. -->
+              <h4>{{ feature.title }}</h4>
+              <p>{{ feature.description }}</p>
+            </div>
+          </div>
+        } 
+
+        <!-- Si el array 'features' está vacío, se muestra este mensaje. -->
+        @empty {
+          <p class="text-center">No hay características disponibles en este momento.</p>
+        }
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Componente de pie de página (footer), puede contener redes, links, derechos, etc. -->
+<app-footer-i></app-footer-i>

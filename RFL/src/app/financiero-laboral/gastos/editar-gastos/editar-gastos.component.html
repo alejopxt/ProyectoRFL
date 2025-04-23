@@ -1,0 +1,105 @@
+<div class="container-fluid">
+    <app-navbar-d></app-navbar-d>
+    <!-- <app-navbar-d></app-navbar-d> -->
+    <div class="row">
+        <div class="col-4">
+          <app-navbar-fl></app-navbar-fl>
+        </div>
+        <div class="col-8">
+<div class="card mt-4"></div>
+    <div class="col-10">
+        <div class="container">
+            <div class="row align-items-center mt-3">
+                <div class="col">
+                    <h1>Editar Gastos</h1>
+                </div>
+                <div class="col d-flex justify-content-end gap-2">
+                    <button [routerLink]="['/financiero-laboral/gastos/agregar']" type="button" class="btn btn-primary align-items center mt-3">Agregar</button>
+                    <button [routerLink]="['/financiero-laboral/gastos/eliminar']" type="button" class="btn btn-primary align-items center mt-3">Borrar</button>
+                </div>
+            </div>
+
+            <div class="table-responsive mt-3">
+                <table class="table table-light table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Método de pago</th>
+                            <th scope="col">Periodicidad</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>Salario mensual</td>
+                            <td>Gasto Laboral</td>
+                            <td>$2,500,000 COP</td>
+                            <td>Pago mensual por el trabajo.</td>
+                            <td>Transferencia bancaria</td>
+                            <td>Mensual</td>
+                            <td>31/01/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Gastos por Freelance (Programación)</td>
+                            <td>Gasto Autónomo</td>
+                            <td>$800,000 COP</td>
+                            <td>Pago por trabajos independientes realizados como programador</td>
+                            <td>PayPal</td>
+                            <td>Quincenal</td>
+                            <td>15/02/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Renta de propiedad</td>
+                            <td>Gasto Pasivo</td>
+                            <td>$1,200,000 COP</td>
+                            <td>Gasto proveniente del alquiler de un apartamento.</td>
+                            <td>Efectivo</td>
+                            <td>Mensual</td>
+                            <td>1/03/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Gastos por ventas en línea</td>
+                            <td>Gasto Autónomo</td>
+                            <td>$500,000 COP</td>
+                            <td>Dinero generado por la venta de productos artesanales.</td>
+                            <td>MercadoPago</td>
+                            <td>Únicamente</td>
+                            <td>9/12/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Intereses de inversión (CDT)</td>
+                            <td>Gasto Pasivo</td>
+                            <td>$300,000 COP</td>
+                            <td>Ganancia obtenida por la inversión en un CDT en un banco.</td>
+                            <td>Transferencia bancaria</td>
+                            <td>Trimestral</td>
+                            <td>15/01/2025</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Nombre">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Categoria">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Monto">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Descripcion">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Metodo de pago">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Periodicidad">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Editar Fecha">
+                            </td>
+                        </tr>
+                        <button type="button" class="btn btn-primary align-items center mt-3">Editar Gastos</button>
+
+

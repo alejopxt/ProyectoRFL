@@ -1,0 +1,139 @@
+@import '../../../../styles/variables';
+
+// Contenedor principal, ocupa toda la pantalla y centra el contenido
+.generar-container {
+  background: $fondo-principal;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+// El contenedor del contenido (como el formulario en tu ejemplo)
+.container {
+  background-color: $tarjeta-fondo; // blanco, beige, etc.
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px $sombra;
+  width: 100%;
+  max-width: 900px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.menu {
+  margin-bottom: 1.5rem;
+
+  select {
+    background: $tarjeta-fondo;
+    border: 1px solid $borde-suave;
+    color: $texto-principal;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px $sombra;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $icono-navbar;
+    }
+  }
+}
+
+h1 {
+  color: $titulo-color;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  animation: fadeInDown 0.6s ease-in-out;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  label {
+    font-weight: bold;
+    color: $texto-principal;
+  }
+
+  select,
+  input[type='date'] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid $borde-suave;
+    background-color: $tarjeta-fondo;
+    color: $texto-principal;
+    box-shadow: 0 2px 4px $sombra;
+
+    &:focus {
+      border-color: $resaltado-financiero;
+      outline: none;
+    }
+  }
+}
+
+.graph {
+  padding: 2rem;
+  text-align: center;
+  background-color: $tarjeta-fondo;
+  border: 1px dashed $borde-suave;
+  border-radius: 1rem;
+  color: $texto-principal;
+  margin-bottom: 2rem;
+}
+
+.icon-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  button {
+    background: $icono-navbar;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite;
+
+    &:hover {
+      animation: bounceHover 0.6s ease-in-out;
+      background: $hover-navbar;
+      cursor: pointer;
+    }
+  }
+}
+
+.actions {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  button {
+    background: $resaltado-financiero;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px $sombra;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: darken($resaltado-financiero, 5%);
+    }
+  }
+}
+
+.success-message {
+  text-align: center;
+  color: $resaltado-financiero;
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: fadeInUp 1s ease;
+}

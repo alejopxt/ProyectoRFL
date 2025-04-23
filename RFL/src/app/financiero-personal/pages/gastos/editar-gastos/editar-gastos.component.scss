@@ -1,0 +1,113 @@
+// Importamos las variables globales (colores, sombras, etc.)
+@import '../../../../../styles/variables';
+
+// Estilos para el contenedor principal de la vista
+.container {
+  padding: 2rem; // Espaciado interno
+  background-color: $fondo-principal; // Fondo definido en variables
+  animation: fadeIn 0.5s ease-in-out; // Animación de entrada suave
+}
+
+// Título principal de la página
+h1 {
+  color: $titulo-color; // Color del título
+  font-weight: bold; // Texto en negrita
+  text-shadow: 1px 1px 2px $sombra; // Sombra ligera para resaltar
+  animation: fadeInDown 0.6s ease-in-out; // Animación desde arriba
+}
+
+// Estilos generales para tablas
+.table {
+  background-color: $tarjeta-fondo; // Fondo de la tabla
+  border: 1px solid $borde-suave; // Borde suave
+  box-shadow: 0 2px 8px $sombra; // Sombra externa
+  border-radius: 0.75rem; // Bordes redondeados
+  overflow: hidden; // Oculta desbordamientos
+  animation: fadeInUp 0.7s ease-in-out; // Animación desde abajo
+
+  // Encabezados de la tabla
+  th {
+    background-color: $fondo-navbar; // Fondo de cabecera
+    color: $titulo-color; // Color del texto
+    font-weight: 600; // Semi-negrita
+    text-align: center; // Centrar texto
+  }
+
+  // Celdas del cuerpo de la tabla
+  td {
+    color: $texto-principal; // Color del texto principal
+    vertical-align: middle; // Centra verticalmente el contenido
+  }
+
+  // Botón de advertencia (editar, por ejemplo)
+  .btn-warning {
+    background-color: $resaltado-financiero; // Color de énfasis
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease; // Transiciones suaves
+    animation: bounceHover 1s infinite; // Animación de rebote continua
+
+    &:hover {
+      background-color: lighten($resaltado-financiero, 10%); // Aclara al pasar el mouse
+      transform: scale(1.05); // Efecto de zoom
+    }
+  }
+}
+
+// Estilos para el modal de editar ingreso
+#modalEditarIngreso {
+  .modal-content {
+    background-color: $tarjeta-fondo; // Fondo de la tarjeta
+    border: 1px solid $borde-suave;
+    box-shadow: 0 4px 12px $sombra-suave; // Sombra más suave
+    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 1rem; // Bordes redondeados
+  }
+
+  // Encabezado y pie del modal
+  .modal-header, .modal-footer {
+    background: $fondo-footer; // Fondo del footer
+    color: $texto-footer; // Texto claro
+    border-bottom: 1px solid $tarjeta-borde; // Línea inferior
+  }
+
+  // Título del modal
+  .modal-title {
+    color: $titulo-footer;
+    font-weight: bold;
+  }
+
+  // Campos de formulario dentro del modal
+  .form-control {
+    border: 1px solid $borde-suave;
+    border-radius: 0.5rem;
+
+    &:focus {
+      border-color: $resaltado-financiero; // Color al enfocar
+      box-shadow: 0 0 5px rgba(0, 168, 107, 0.3); // Sombra para enfoque
+    }
+  }
+
+  // Botón principal (guardar, por ejemplo)
+  .btn-primary {
+    background: $icono-navbar; // Color de botón
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+      background: lighten($icono-navbar, 10%); // Aclara al pasar el mouse
+    }
+  }
+
+  // Botón secundario (cancelar, cerrar, etc.)
+  .btn-secondary {
+    background-color: $borde-suave;
+    border: none;
+    color: $texto-principal;
+
+    &:hover {
+      background-color: darken($borde-suave, 10%); // Oscurece al pasar el mouse
+    }
+  }
+}

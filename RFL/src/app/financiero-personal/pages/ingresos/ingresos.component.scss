@@ -1,0 +1,99 @@
+// Variables globales del diseño
+@import '../../../../styles/variables';
+
+// Contenedor general de la vista
+.container {
+  background-color: $fondo-principal;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px $sombra;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+// Título principal
+h1 {
+  color: $titulo-color;
+  font-weight: bold;
+  animation: fadeInDown 0.5s ease-in-out;
+}
+
+// Estilo para botones generales
+button {
+  background: $degradado-navbar;
+  color: white;
+  font-weight: 500;
+  border: none;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px $sombra;
+
+  &:hover {
+    background: $hover-navbar;
+    transform: scale(1.05);
+  }
+}
+
+// Estilo para la tabla de datos
+.table {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: $tarjeta-fondo;
+  box-shadow: 0 4px 6px $sombra-suave;
+  animation: fadeInUp 0.5s ease-in-out;
+
+  th {
+    background-color: $borde-suave;
+    color: $titulo-color;
+    font-weight: 600;
+  }
+
+  td {
+    color: $texto-principal;
+  }
+}
+
+// Estilo para interruptores de formulario (form-switch)
+.form-switch {
+  .form-check-input {
+    background-color: $resaltado-financiero;
+    border-color: $resaltado-financiero;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 168, 107, 0.5);
+
+    &:checked {
+      background-color: $resaltado-financiero;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(0, 168, 107, 0.25);
+    }
+  }
+}
+
+// Navegación lateral o superior
+nav {
+  background: $fondo-navbar;
+  border-right: 1px solid $borde-navbar;
+  box-shadow: 2px 0 6px $sombra;
+
+  h4 {
+    color: $titulo-color;
+    font-weight: 600;
+  }
+}
+
+// Estilos para enlaces de navegación
+.nav-link {
+  color: $texto-navbar !important;
+
+  &:hover {
+    color: $icono-navbar !important;
+    background-color: lighten($fondo-navbar, 5%);
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// Líneas divisorias
+hr {
+  border-color: $borde-suave;
+}

@@ -1,0 +1,124 @@
+<!-- Navbar del usuario desplegado (barra superior del sistema) -->
+<app-navbar-d></app-navbar-d>
+
+<!-- Contenedor principal con margen arriba -->
+<div class="container mt-4">
+
+  <!-- Tarjeta con sombra y padding para agrupar el contenido -->
+  <div class="card shadow p-4">
+    <!-- Título centrado -->
+    <h2 class="text-center mb-4">
+      <i class="fas fa-user-edit"></i> Editar Perfil
+    </h2>
+
+    <!-- Sección para mostrar la imagen de perfil -->
+    <div class="text-center mb-4">
+      <!-- Etiqueta que actúa como botón para subir imagen -->
+      <label for="imagenInput">
+        <!-- Muestra la imagen actual de perfil -->
+        <img [src]="imagenUrl" class="perfil-imagen img-thumbnail" alt="Imagen de perfil">
+      </label>
+
+      <!-- Input oculto para subir una nueva imagen -->
+      <input type="file" id="imagenInput" class="d-none" (change)="cargarImagen($event)">
+
+      <!-- Texto informativo debajo de la imagen -->
+      <p class="text-muted mt-2">Haz clic en la imagen para cambiarla</p>
+
+      <!-- Validación si el formato de imagen no es válido -->
+      @if (imagenInvalida) {
+        <div class="alert alert-danger p-1 mt-2">
+          <i class="fas fa-exclamation-circle"></i> El formato de la imagen debe ser JPG, JPEG o PNG.
+        </div>
+      }
+    </div>
+
+    <!-- Formulario reactivo para editar perfil -->
+    <form [formGroup]="perfilForm" (ngSubmit)="guardarPerfil()">
+      <div class="row">
+        <!-- Columna izquierda del formulario -->
+        <div class="col-md-6">
+          <!-- Campo de nombres -->
+          <div class="mb-3">
+            <label><i class="fas fa-user"></i> Nombres</label>
+            <input type="text" class="form-control" formControlName="nombres" placeholder="Ingresa tu nombre">
+            
+            <!-- Validación si el nombre contiene caracteres no válidos -->
+            @if (perfilForm.get('nombres')?.touched && perfilForm.get('nombres')?.invalid) {
+              <div class="alert alert-warning p-1 mt-1">
+                <i class="fas fa-exclamation-circle"></i> Solo se permiten letras y espacios.
+              </div>
+            }
+          </div>
+
+          <!-- Campo de correo electrónico -->
+          <div class="mb-3">
+            <label><i class="fas fa-envelope"></i> Correo electrónico</label>
+            <input type="email" class="form-control" formControlName="correo" placeholder="correo@ejemplo.com">
+            
+            <!-- Validación si el correo no es válido -->
+            @if (perfilForm.get('correo')?.touched && perfilForm.get('correo')?.invalid) {
+              <div class="alert alert-warning p-1 mt-1">
+                <i class="fas fa-exclamation-circle"></i> El correo debe ser válido (gmail, hotmail, outlook).
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Columna derecha del formulario -->
+        <div class="col-md-6">
+          <!-- Campo de tipo de documento -->
+          <div class="mb-3">
+            <label><i class="fas fa-id-card"></i> Tipo de Documento</label>
+            <select class="form-control" formControlName="tipoDocumento">
+              <option value="">Selecciona...</option>
+              <option value="TI">Tarjeta de Identidad</option>
+              <option value="CC">Cédula de Ciudadanía</option>
+              <option value="CE">Cédula de Extranjería</option>
+            </select>
+            
+            <!-- Validación si no se selecciona un tipo de documento -->
+            @if (perfilForm.get('tipoDocumento')?.touched && perfilForm.get('tipoDocumento')?.invalid) {
+              <div class="alert alert-info p-1 mt-1">
+                <i class="fas fa-info-circle"></i> Por favor selecciona un tipo de documento.
+              </div>
+            }
+          </div>
+
+          <!-- Campo de número de documento -->
+          <div class="mb-3">
+            <label><i class="fas fa-id-badge"></i> Número de Documento</label>
+            <input type="text" class="form-control" formControlName="documento" placeholder="Ingresa tu documento">
+            
+            <!-- Validación si el documento contiene letras u otros caracteres -->
+            @if (perfilForm.get('documento')?.touched && perfilForm.get('documento')?.invalid) {
+              <div class="alert alert-warning p-1 mt-1">
+                <i class="fas fa-exclamation-circle"></i> El documento debe contener solo números.
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón para guardar los cambios -->
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-success px-4" [disabled]="perfilForm.invalid">
+          <i class="fas fa-save"></i> Guardar Cambios
+        </button>
+      </div>
+
+      <!-- Mensaje de éxito si el perfil se actualizó correctamente -->
+      @if (mensajeExito) {
+        <div class="alert alert-success mt-3 p-2 text-center">
+          <i class="fas fa-check-circle"></i> Perfil actualizado correctamente.
+        </div>
+      } 
+      <!-- Mensaje de error si hubo un problema al guardar -->
+      @else if (mensajeError) {
+        <div class="alert alert-danger mt-3 p-2 text-center">
+          <i class="fas fa-exclamation-triangle"></i> Ocurrió un error al guardar los cambios.
+        </div>
+      }
+    </form>
+  </div>
+</div>

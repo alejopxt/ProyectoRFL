@@ -1,0 +1,152 @@
+// Importamos las variables personalizadas de colores, sombras, etc.
+@import '../../../../styles/variables';
+
+// Contenedor principal de la página de inicio
+.inicio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  background: $fondo-principal; // Fondo claro y suave
+  min-height: 100vh; // Altura mínima del viewport completo
+  opacity: 0; // Comienza invisible
+  animation: fadeIn 1s ease-in-out forwards; // Animación de aparición
+
+  // Texto principal tipo "hero" al centro
+  .hero-text {
+    max-width: 800px;
+    margin-bottom: 40px;
+    color: $texto-principal;
+    animation: fadeIn 1s ease-in-out 0.5s forwards;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: $titulo-color;
+
+      // Efecto máquina de escribir
+      overflow: hidden;
+      border-right: 3px solid $titulo-color;
+      white-space: nowrap;
+      width: 0;
+      display: inline-block;
+      animation: 
+        typeWriter 2s steps(30, end) forwards, 
+        blink 0.75s step-end infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: darken($texto-principal, 10%);
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: darken($texto-principal, 20%);
+    }
+  }
+}
+
+// Animación del cursor para efecto máquina de escribir
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+// Tarjetas de características o módulos (como perfil, finanzas, etc.)
+.feature-card {
+  background: $tarjeta-fondo;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px $sombra;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid $borde-suave;
+  min-height: 200px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    animation: bounce 0.5s ease-in-out;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    color: $resaltado-financiero;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $titulo-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: darken($texto-principal, 20%);
+  }
+}
+
+// Pie de página elegante con animación y tarjetas
+.footer {
+  background: $fondo-footer;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0px -2px 10px $sombra-suave;
+  animation: fadeInUp 1s ease-in-out;
+
+  h5 {
+    color: $titulo-footer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 1s ease-in-out 0.3s forwards;
+  }
+
+  .footer-icon {
+    font-size: 1.8rem;
+    color: $icono-footer;
+    animation: rotateIcon 4s linear infinite; // Rotación infinita del ícono
+  }
+
+  // Tarjetas informativas del footer
+  .custom-card {
+    background: $tarjeta-fondo;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px $sombra-suave;
+    border: 2px solid $tarjeta-borde;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+      animation: glow 1.5s infinite alternate ease-in-out; // Resplandor animado
+    }
+
+    .custom-icon {
+      font-size: 2rem;
+      color: $icono-footer;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: darken($texto-principal, 15%);
+    }
+  }
+}

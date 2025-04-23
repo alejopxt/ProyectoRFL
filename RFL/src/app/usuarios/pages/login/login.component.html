@@ -1,0 +1,97 @@
+<!-- Contenedor principal del formulario de login. -->
+<div class="login-container">
+
+  <!-- Formulario reactivo enlazado con Angular usando [formGroup] y (ngSubmit) -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+    <!-- Título centrado del formulario -->
+    <h2 class="text-center">Iniciar Sesión</h2>
+
+    <!-- Etiqueta para el campo de usuario -->
+    <label for="usuario" class="form-label">
+      <i class="fas fa-user"></i> Usuario
+    </label>
+
+    <!-- Grupo de entrada para el correo electrónico del usuario -->
+    <div class="input-group mb-3">
+      <!-- Ícono dentro del input -->
+      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+      <!-- Campo tipo email enlazado con el formControl 'usuario' -->
+      <input type="email" id="usuario" formControlName="usuario" class="form-control" placeholder="Ingrese su Correo">
+    </div>
+
+    <!-- Validaciones para el campo de usuario -->
+    @if (loginForm.get('usuario')?.touched) {
+      @if (loginForm.get('usuario')?.hasError('required')) {
+        <!-- Si está vacío -->
+        <div class="alert alert-danger p-1">
+          <i class="fas fa-exclamation-circle"></i> El correo es obligatorio.
+        </div>
+      } @else if (loginForm.get('usuario')?.hasError('pattern')) {
+        <!-- Si no cumple el patrón permitido -->
+        <div class="alert alert-warning p-1">
+          <i class="fas fa-exclamation-triangle"></i> Solo se permiten correos de Hotmail, Gmail u Outlook.
+        </div>
+      } @else {
+        <!-- Si es válido -->
+        <div class="alert alert-success p-1">
+          <i class="fas fa-check-circle"></i> ¡Correo válido!
+        </div>
+      }
+    }
+
+    <!-- Etiqueta para el campo de contraseña -->
+    <label for="password" class="form-label">
+      <i class="fas fa-lock"></i> Contraseña
+    </label>
+
+    <!-- Grupo de entrada para la contraseña -->
+    <div class="input-group mb-3">
+      <!-- Ícono dentro del input -->
+      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+      <!-- Campo de contraseña con opción de mostrar/ocultar usando showPassword -->
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        id="password"
+        formControlName="password"
+        class="form-control"
+        placeholder="Ingrese su Contraseña">
+    </div>
+
+    <!-- Validaciones para la contraseña -->
+    @if (loginForm.get('password')?.touched) {
+      @if (loginForm.get('password')?.hasError('required')) {
+        <!-- Si no se ingresó -->
+        <div class="alert alert-danger p-1">
+          <i class="fas fa-exclamation-circle"></i> La contraseña es obligatoria.
+        </div>
+      } @else if (loginForm.get('password')?.hasError('pattern')) {
+        <!-- Si no cumple los requisitos -->
+        <div class="alert alert-warning p-1">
+          <i class="fas fa-exclamation-triangle"></i> La contraseña debe tener al menos 8 caracteres y solo letras o números.
+        </div>
+      } @else {
+        <!-- Si es válida -->
+        <div class="alert alert-success p-1">
+          <i class="fas fa-check-circle"></i> ¡Contraseña válida!
+        </div>
+      }
+    }
+
+    <!-- Botón de envío del formulario -->
+    <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+
+    <!-- Links para recuperar contraseña o registrarse -->
+    <div class="d-flex justify-content-between mt-3">
+      <!-- Redirección al módulo de recuperar contraseña -->
+      <a [routerLink]="['/usuarios/olvide-contrasena']" class="text-decoration-none">
+        <i class="fas fa-question-circle"></i> ¿Olvidaste tu contraseña?
+      </a>
+      <!-- Redirección al módulo de registro -->
+      <a [routerLink]="['/usuarios/registro']" class="text-decoration-none">
+        <i class="fas fa-user-plus"></i> Registrar
+      </a>
+    </div>
+
+  </form>
+</div>
